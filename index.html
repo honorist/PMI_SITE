@@ -1,0 +1,1102 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PMIRS Summit 2026, 13 e 14 de novembro · Tecnopuc, Porto Alegre</title>
+<meta name="description" content="O maior evento de gestão de projetos do PMIRS. 13 e 14 de novembro de 2026 · Tecnopuc, PUCRS, Porto Alegre/RS.">
+<meta property="og:title" content="PMIRS Summit 2026, O Summit de Gerente de Projetos do RS">
+<meta property="og:description" content="Palestras, workshops e networking em gestão de projetos, IA e liderança. 13 e 14 de novembro · Tecnopuc, Porto Alegre.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Schibsted+Grotesk:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1a1230;
+  --muted:#5f5a72;
+  --accent:#7c3aed;
+  --accent-p:#6d28d9;
+  --teal:#0e9488;
+  --green:#1f9d6b;
+  --navy:#1b1145;
+  --navy2:#140d33;
+  --cream:#f4f1ea;
+  --rad:22px;
+  --rad-sm:14px;
+  --hero-grad:linear-gradient(105deg,#1c9b86 0%,#2f63b4 40%,#5b2da4 74%,#6d2c9c 100%);
+  --dw:800;
+  --dt:-0.02em;
+}
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:#fff;color:var(--ink);font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;text-align:left;hyphens:none;}
+h1,h2,h3,h4,h5,.eyebrow,.btn,.nav-links a,.tab-btn,.spon-tier-lbl,.ag-dow,.etg,.pcat,.fcta-ey,.vcat,.eyebrow{text-align:left;hyphens:none;}
+h1,h2,h3,h4{font-family:'Schibsted Grotesk','Hanken Grotesk',system-ui,sans-serif;letter-spacing:var(--dt);font-weight:var(--dw);}
+::selection{background:#7c3aed;color:#fff;}
+a{color:inherit;text-decoration:none;}
+img{display:block;max-width:100%;}
+
+.container{width:100%;max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,48px);}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--teal);margin:0;}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:15px;padding:13px 28px;border-radius:9999px;cursor:pointer;border:none;transition:all .15s;text-decoration:none;line-height:1;}
+.btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+.btn-v{background:linear-gradient(120deg,#8b3fe8,#6d28d9);color:#fff;box-shadow:0 6px 20px rgba(124,58,237,.4);}
+.btn-v:hover{filter:brightness(1.08);}
+.btn-w{background:#fff;color:var(--accent-p);}
+.btn-w:hover{background:#f0eaff;}
+.btn-ov{background:transparent;color:var(--accent);border:1.5px solid var(--accent);}
+.btn-ov:hover{background:var(--accent);color:#fff;}
+.btn-ow{background:transparent;color:#fff;border:1.5px solid #fff;}
+.btn-ow:hover{background:#fff;color:var(--navy);}
+.btn-sm{font-size:13.5px;padding:10px 20px;}
+
+/* ── NAV ── */
+nav.top{position:sticky;top:0;z-index:80;background:var(--navy2);transition:box-shadow .3s;}
+nav.top.scrolled{box-shadow:0 4px 30px rgba(20,13,51,.55);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;}
+.nav-logo{display:flex;align-items:center;gap:11px;}
+.nav-mark{display:inline-flex;align-items:center;gap:3px;}
+.nm-bar{width:9px;height:20px;background:#fff;border-radius:9px 0 0 9px;display:block;}
+.nm-bar.r{border-radius:0 9px 9px 0;margin-left:-2px;}
+.nm-c1{width:20px;height:20px;border-radius:50%;background:linear-gradient(90deg,#fff 50%,rgba(255,255,255,.3) 50%);margin-left:4px;}
+.nm-c2{width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,.9);margin-left:3px;}
+.nav-txt{color:#fff;font-weight:600;font-size:11.5px;line-height:1.12;letter-spacing:.02em;}
+.nav-links{display:flex;align-items:center;gap:28px;}
+.nav-links a{color:#fff;font-size:15px;font-weight:500;opacity:.88;transition:opacity .15s;}
+.nav-links a:hover{opacity:1;}
+.nav-right{display:flex;align-items:center;gap:18px;}
+.nav-sub{color:#cfc8e8;font-size:13px;}
+.nav-sub a{color:#fff;font-weight:600;text-decoration:underline;}
+.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;}
+.nav-burger span{width:24px;height:2.5px;background:#fff;border-radius:2px;display:block;}
+.mob-menu{background:var(--navy2);border-top:1px solid rgba(255,255,255,.1);padding:16px 24px 26px;flex-direction:column;gap:4px;display:none;}
+.mob-menu.open{display:flex;}
+.mob-menu a{color:#fff;font-size:17px;font-weight:600;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.08);}
+.mob-menu a.cta-mob{margin-top:14px;text-align:center;background:linear-gradient(120deg,#8b3fe8,#6d28d9);border-radius:9999px;padding:14px;border:none;}
+
+/* ── HERO ── */
+.hero{position:relative;background:var(--hero-grad);padding:clamp(56px,8vw,104px) 0 0;overflow:hidden;}.stats-outer{position:relative;z-index:4;}
+.hero-glow{position:absolute;inset:0;background:radial-gradient(circle at 78% 30%,rgba(255,255,255,.16),transparent 45%);pointer-events:none;}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,72px);align-items:center;padding-bottom:96px;position:relative;z-index:2;}
+.hero h1{color:#fff;font-size:clamp(28px,4.2vw,58px);line-height:1.1;margin:0;text-align:center;}
+@keyframes wordUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@keyframes lineGrow{from{width:0}to{width:100%}}
+.hw{display:inline-block;opacity:0;animation:wordUp .55s cubic-bezier(.22,1,.36,1) forwards;}
+.hw-teal{color:#3fffd0;}
+.hw-und{position:relative;}
+.hw-und::after{content:'';position:absolute;left:0;bottom:-12px;height:3px;width:0;background:linear-gradient(90deg,#3fffd0,#c084fc);border-radius:2px;animation:lineGrow .7s 1.1s cubic-bezier(.22,1,.36,1) forwards;}
+.hero-support{color:rgba(255,255,255,.72);font-size:clamp(18px,2.1vw,26px);font-style:italic;margin:32px 0 0;font-weight:400;opacity:0;letter-spacing:.01em;text-align:center;}
+.hero-card{background:rgba(36,18,82,.42);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.18);border-radius:var(--rad);padding:clamp(28px,3.4vw,44px);}
+.hero-card h2{color:#fff;font-size:clamp(34px,4vw,52px);line-height:1.0;margin:0;}
+.hero-card .sub{color:#e7e0fb;font-size:18px;margin:14px 0 0;font-weight:500;}
+.hero-card-cta{display:flex;align-items:center;gap:18px;margin:28px 0 26px;flex-wrap:wrap;}
+.hero-card .early{color:#d9d1f5;font-size:13.5px;line-height:1.35;}
+.hero-card .early b{color:#fff;}
+.hero-card .desc{color:#cfc6ec;font-size:15px;line-height:1.55;margin:0;hyphens:none;text-align:left;}
+.cd-row{display:flex;gap:10px;margin-top:24px;}
+.cd{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:14px 18px;text-align:center;min-width:78px;}
+.cd .n{font-size:42px;font-weight:800;color:#fff;line-height:1;font-variant-numeric:tabular-nums;}
+.cd .l{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-top:4px;}
+
+/* stats bar */
+.stats-outer{padding:0 clamp(16px,4vw,48px);margin-top:-1px;}
+.stats-bar{background:linear-gradient(110deg,var(--navy),#2a1660 55%,#143a32);border-radius:var(--rad);padding:26px clamp(16px,3vw,40px);display:grid;grid-template-columns:repeat(5,1fr);box-shadow:0 26px 60px rgba(20,13,51,.4);transform:translateY(-50%);position:relative;z-index:3;}
+.sb-i{text-align:center;border-right:1px solid rgba(255,255,255,.14);padding:4px 8px;}
+.sb-i:last-child{border-right:none;}
+.sb-v{color:#fff;font-size:clamp(28px,4vw,46px);font-weight:800;letter-spacing:-.02em;line-height:1;}
+.sb-l{color:#5fe0b0;font-size:14px;font-weight:600;margin-top:6px;white-space:nowrap;}
+
+/* ── SECTIONS ── */
+section.pad{padding:clamp(60px,8vw,110px) 0;}
+h2.sec{font-size:clamp(32px,4vw,46px);line-height:1.05;margin:14px 0 0;}
+p.desc{color:var(--muted);font-size:17px;line-height:1.6;margin:18px 0 0;}
+
+/* ── WHY ATTEND ── */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:clamp(36px,5vw,72px);align-items:start;margin-top:clamp(40px,5vw,60px);}
+.why-feats{display:flex;flex-direction:column;gap:26px;}
+.why-feat{display:flex;gap:22px;align-items:flex-start;}
+.why-feat .thumb{flex:none;width:90px;height:90px;border-radius:18px;display:flex;align-items:center;justify-content:center;}
+.why-feat .thumb svg{width:52px;height:52px;}
+.why-feat h3{font-size:21px;margin:0 0 8px;letter-spacing:-.01em;}
+.why-feat p{color:var(--muted);font-size:15.5px;line-height:1.55;margin:0;}
+
+/* ── CITY ── */
+.split{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(40px,5vw,80px);align-items:center;}
+.split.rev{direction:rtl;}
+.split.rev>*{direction:ltr;}
+.circ{border-radius:50%;overflow:hidden;width:100%;aspect-ratio:1;position:relative;}
+.circ-track{display:flex;width:100%;height:100%;transition:transform .9s cubic-bezier(.65,0,.35,1);}
+.circ-track img{width:100%;height:100%;object-fit:cover;flex-shrink:0;}
+
+/* ── SPEAKERS DARK ── */
+.spk-dark{background:linear-gradient(115deg,var(--navy2),#2a1660 50%,#103a30);padding:clamp(56px,7vw,90px) 0;}
+.spk-wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(28px,3vw,40px);align-items:start;}
+.spk-lead{grid-column:1/-1;}
+.spk-lead h2{color:#fff;font-size:clamp(30px,3.6vw,42px);max-width:640px;}
+.spk-lead p{color:#cdc5e8;font-size:16px;line-height:1.55;margin-top:14px;}
+.spk-lead a{color:#fff;font-weight:600;}
+.spk-card{position:relative;border-radius:var(--rad);overflow:hidden;min-height:340px;background:#241a52;display:flex;flex-direction:column;justify-content:flex-end;padding:24px;transition:transform .3s;}
+.spk-card:hover{transform:translateY(-4px);}
+.spk-card .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.75;z-index:0;}
+.spk-card .vl{position:absolute;inset:0;background:linear-gradient(180deg,rgba(106,47,184,.12) 30%,rgba(20,13,51,.92));z-index:1;}
+.spk-card .si{position:relative;z-index:2;}
+.spk-card h3{color:#fff;font-size:21px;margin:0 0 4px;}
+.spk-card .ro{color:#6fe6b8;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin:0 0 12px;}
+.spk-card .bi{color:#d6cef0;font-size:13.5px;line-height:1.5;margin:0;}
+.spk-card-feat{position:relative;border-radius:var(--rad);overflow:hidden;background:#1a1040;display:grid;grid-template-columns:280px 1fr;min-height:380px;transition:transform .3s;grid-column:1/-1;}
+.spk-card-feat:hover{transform:translateY(-4px);}
+.spk-card-feat .ph{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;}
+.spk-card-feat .si{padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;justify-content:center;gap:10px;}
+.spk-card-feat h3{color:#fff;font-size:clamp(22px,2.4vw,30px);margin:0;}
+.spk-card-feat .ro{color:#6fe6b8;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin:0;line-height:1.6;}
+.spk-card-feat .bi{color:#d6cef0;font-size:14px;line-height:1.6;margin:0;}
+@media(max-width:680px){.spk-card-feat{grid-template-columns:1fr;}.spk-card-feat .ph{height:280px;}}
+
+/* ── PRICING ── */
+.price-grid{display:grid;grid-template-columns:minmax(0,580px) minmax(0,1fr);gap:clamp(40px,5vw,80px);align-items:center;}
+.price-stack{position:relative;}
+.price-cards{display:flex;align-items:flex-start;margin-bottom:26px;}
+.price-main{flex:0 0 340px;position:relative;z-index:2;background:linear-gradient(160deg,#6a2fb8,#4a1d8a 60%,#143a32);border-radius:var(--rad);padding:34px 32px;box-shadow:0 28px 70px rgba(74,29,138,.5);}
+.price-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(95,224,176,.18);color:#7af0c0;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:99px;margin:0 0 6px;}
+.price-sub{color:rgba(255,255,255,.55);font-size:13px;margin:0 0 22px;line-height:1.4;}
+.pcat{color:#cdbff0;font-size:12px;font-weight:700;letter-spacing:.08em;margin:0 0 6px;}
+.pstrike{display:flex;align-items:center;gap:10px;margin-bottom:2px;}
+.pstrike s{color:rgba(255,255,255,.45);font-size:17px;}
+.pbadge{background:rgba(95,224,176,.22);color:#7af0c0;font-size:11px;font-weight:700;padding:3px 9px;border-radius:6px;}
+.pamt{color:#fff;font-size:46px;font-weight:800;letter-spacing:-.02em;line-height:1;}
+.pamt small{font-size:16px;font-weight:600;opacity:.7;}
+.price-bg{flex:0 0 300px;margin-left:-72px;margin-top:34px;position:relative;z-index:1;background:linear-gradient(150deg,#2a1d60,#1a1140 65%,#0f2a40);border-radius:var(--rad);padding:30px 28px;text-align:right;box-shadow:0 22px 55px rgba(20,13,51,.55);}
+.price-bg .pnext{color:#7af0c0;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin:0 0 4px;text-align:right;}
+.price-bg h3{color:#fff;font-size:24px;font-weight:800;margin:0 0 20px;text-align:right;}
+.price-bg .pcat{color:#a99ccf;margin:0 0 4px;text-align:right;}
+.price-bg .am{color:#fff;font-size:32px;font-weight:800;margin-bottom:18px;line-height:1;letter-spacing:-.02em;text-align:right;}
+.price-bg .am small{font-size:14px;font-weight:600;opacity:.6;margin-left:4px;}
+.group-banner{position:relative;z-index:2;margin-top:26px;max-width:560px;background:linear-gradient(110deg,#4a1d8a,#1f9d6b);border-radius:var(--rad-sm);padding:18px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.group-banner span{color:#fff;font-weight:700;font-size:15px;}
+.testibubble{background:#f1e9fc;border-radius:18px 18px 18px 4px;padding:22px 26px;max-width:420px;margin-top:38px;}
+.testibubble p{font-size:17px;line-height:1.5;color:var(--ink);margin:0;}
+
+/* ── JORNADA DE PALESTRAS ── */
+.jp-layout{display:grid;grid-template-columns:1.7fr 1fr;gap:clamp(24px,3vw,44px);margin-top:clamp(30px,4vw,46px);align-items:start;}
+.jp-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(16px,1.6vw,22px);}
+.jp-card{flex:1 1 300px;max-width:360px;background:linear-gradient(165deg,#241a52,#1a1140 75%,#0f2a40);border:1px solid rgba(255,255,255,.08);border-radius:var(--rad);padding:clamp(22px,2.2vw,28px);transition:transform .25s,border-color .25s;}
+.jp-card:hover{transform:translateY(-4px);border-color:rgba(95,224,176,.4);}
+.jp-card .jp-n{font-size:12px;font-weight:700;letter-spacing:.14em;color:rgba(255,255,255,.32);margin:0 0 12px;}
+.jp-card h3{color:#fff;font-size:clamp(18px,1.7vw,21px);font-weight:800;margin:0 0 8px;}
+.jp-card .jp-tag{color:#7af0c0;font-size:14px;font-weight:600;line-height:1.4;margin:0 0 10px;}
+.jp-card p{color:#cfc6ec;font-size:13.5px;line-height:1.55;margin:0;}
+.jp-side{background:linear-gradient(160deg,#4a1d8a,#1f9d6b);border-radius:var(--rad);padding:clamp(24px,2.5vw,32px);position:sticky;top:90px;}
+.jp-side-lbl{color:rgba(255,255,255,.85);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin:0 0 18px;}
+.jp-hi{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);border-radius:var(--rad-sm);padding:16px 18px;margin-bottom:12px;backdrop-filter:blur(4px);}
+.jp-hi:last-child{margin-bottom:0;}
+.jp-hi h4{color:#fff;font-size:16.5px;font-weight:700;margin:0 0 4px;}
+.jp-hi p{color:rgba(255,255,255,.82);font-size:13px;line-height:1.45;margin:0;}
+
+/* ── MAKECASE ── */
+.mc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:clamp(28px,3vw,44px);align-items:start;}
+.mc-card{background:linear-gradient(165deg,#241a52,#1f9d6b);border-radius:var(--rad);padding:clamp(28px,3vw,40px);}
+.mc-card .ey{color:#6fe6b8;font-size:13px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;margin:0 0 10px;}
+.mc-card h2{color:#fff;font-size:clamp(26px,3vw,34px);margin:0;}
+.mc-card p{color:#d6cef0;font-size:15.5px;line-height:1.6;margin:14px 0 0;}
+.mc-stats{display:grid;grid-template-columns:repeat(3,1fr);border-radius:var(--rad);overflow:hidden;}
+.mc-stat{padding:24px 18px 22px;}
+.mc-stat .v{color:#fff;font-size:clamp(34px,4vw,50px);font-weight:800;letter-spacing:-.02em;line-height:1;}
+.mc-stat .d{color:rgba(255,255,255,.92);font-size:13px;font-weight:500;line-height:1.4;margin-top:10px;}
+.mc-photos{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;}
+.mc-photos img{border-radius:14px;height:130px;width:100%;object-fit:cover;}
+.mc-bottom{display:grid;grid-template-columns:.7fr 1.3fr;gap:14px;margin-top:14px;align-items:center;}
+.mc-bottom img{border-radius:14px;height:120px;width:100%;object-fit:cover;}
+.mc-quote{background:#f1e9fc;border-radius:18px;padding:18px 22px;}
+.mc-quote p{font-size:15px;line-height:1.45;color:var(--ink);margin:0;}
+.mc-quote .at{font-size:11.5px;margin-top:10px;}
+
+/* ── AGENDA ── */
+.ag-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(36px,5vw,72px);align-items:start;}
+.ag-day{padding:22px 0;border-top:1px solid #e7e3ee;}
+.ag-dow{color:var(--teal);font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 8px;}
+.ag-day h3{font-size:21px;margin:0 0 10px;letter-spacing:-.01em;}
+.ag-day p{color:var(--muted);font-size:15px;line-height:1.55;margin:0;}
+.ag-photos{display:grid;grid-template-columns:1.4fr 1fr;gap:14px;margin-top:34px;}
+.ag-photos img{border-radius:14px;height:150px;width:100%;object-fit:cover;}
+.ag-q{background:#f1e9fc;border-radius:18px 18px 18px 4px;padding:18px 22px;margin-top:16px;max-width:430px;}
+.ag-q p{font-size:15px;line-height:1.45;color:var(--ink);margin:0;}
+
+/* ── SCHEDULE TABS ── */
+.tab-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px;background:#f4f1f9;padding:8px;border-radius:9999px;width:fit-content;max-width:100%;}
+.tab-btn{font-family:'Hanken Grotesk',sans-serif;font-size:14.5px;font-weight:600;padding:10px 20px;border-radius:9999px;border:none;cursor:pointer;transition:all .18s;background:transparent;color:var(--muted);}
+.tab-btn.active,.tab-btn:hover{background:var(--accent);color:#fff;}
+.tab-panel{display:none;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(28px,4vw,56px);align-items:start;}
+.tab-panel.active{display:grid;}
+.sess-list{border-top:1px solid #e7e3ee;}
+.sess-row{display:flex;gap:18px;padding:14px 0;border-bottom:1px solid #eceaf2;}
+.sess-row .t{flex:none;width:140px;color:var(--accent);font-weight:600;font-size:13.5px;}
+.sess-row .n{color:var(--ink);font-size:15px;font-weight:500;}
+.sess-row .n .spk{display:block;color:var(--muted);font-size:12.5px;font-weight:500;margin-top:3px;}
+.hl-cards{display:flex;flex-direction:column;gap:16px;}
+.hl{border-radius:var(--rad);background:linear-gradient(150deg,rgba(106,47,184,.5),rgba(20,13,51,.92)),repeating-linear-gradient(135deg,#3a2a66,#3a2a66 11px,#332458 11px,#332458 22px);padding:22px;min-height:140px;display:flex;flex-direction:column;justify-content:flex-end;}
+.hl h4{color:#fff;font-size:18px;margin:0 0 6px;}
+.hl p{color:#d6cef0;font-size:13.5px;line-height:1.5;margin:0;}
+
+/* ── KEYNOTE DARK ── */
+.key-dark{background:linear-gradient(150deg,#2a1660,#1b1145 55%,#10342b);padding:clamp(56px,7vw,96px) 0;}
+.key-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;align-items:stretch;margin-top:46px;}
+.key-card{position:relative;border-radius:var(--rad);overflow:hidden;min-height:380px;background:#241a52;padding:26px;display:flex;flex-direction:column;justify-content:flex-end;}
+.key-card .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
+.key-card .vl{position:absolute;inset:0;background:linear-gradient(180deg,rgba(47,111,179,.12) 25%,rgba(20,13,51,.94));z-index:1;}
+.key-card .ki{position:relative;z-index:2;}
+.key-card h3{color:#fff;font-size:23px;margin:0 0 4px;}
+.key-card .kr{color:#a87bf0;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin:0 0 12px;}
+.key-card .kb{color:#d6cef0;font-size:13.5px;line-height:1.5;margin:0;}
+.key-tba{border-radius:var(--rad);background:linear-gradient(180deg,#10342b,#0a1f18);min-height:380px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px;}
+.key-tba .circ-ph{width:88px;height:88px;border-radius:50%;background:rgba(255,255,255,.06);margin-bottom:22px;}
+.key-tba h3{color:#fff;font-size:19px;font-weight:700;margin:0 0 10px;}
+.key-tba p{color:#cdc5e8;font-size:14px;margin:0;}
+
+/* ── SPOTLIGHT ROWS ── */
+.spot{padding:clamp(50px,6vw,80px) 0;}
+
+/* ── FULL LIST CTA ── */
+.full-cta-card{position:relative;border-radius:var(--rad);overflow:hidden;background:linear-gradient(120deg,#10342b,#1b1145 60%,#241a52);padding:clamp(36px,5vw,60px);min-height:240px;}
+.full-cta-card::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 75% 60%,rgba(47,111,179,.4),transparent 55%);pointer-events:none;}
+.full-cta-inner{position:relative;z-index:1;max-width:440px;}
+.full-cta-inner h2{color:#fff;font-size:clamp(30px,3.6vw,44px);line-height:1.04;margin:0 0 24px;}
+.brand-tag{display:flex;align-items:center;gap:12px;margin-top:28px;}
+.brand-tag .bm{display:inline-flex;gap:3px;}
+.brand-tag .bm span{width:11px;height:21px;background:#fff;border-radius:11px 0 0 11px;display:block;}
+.brand-tag .bm span.r{border-radius:0 11px 11px 0;margin-left:-2px;}
+.brand-tag .bc1{width:21px;height:21px;border-radius:50%;background:linear-gradient(90deg,#fff 50%,rgba(255,255,255,.3) 50%);}
+.brand-tag .bc2{width:21px;height:21px;border-radius:50%;background:rgba(255,255,255,.85);}
+.brand-tag span.label{color:#fff;font-weight:600;font-size:15px;margin-left:6px;}
+
+/* ── VENUE ── */
+.venue{position:relative;border-radius:var(--rad);overflow:hidden;min-height:420px;background:#241a52;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:clamp(32px,5vw,60px);gap:clamp(24px,4vw,56px);}
+.venue .vph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
+.venue .vvl{position:absolute;inset:0;background:linear-gradient(105deg,rgba(20,13,51,.91) 0%,rgba(20,13,51,.80) 42%,rgba(16,58,48,.62) 100%);z-index:1;}
+.venue-cnt{position:relative;z-index:2;}
+.venue-cnt .vcat{color:#cdbff0;font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin:0 0 12px;}
+.venue-cnt h2{color:#fff;font-size:clamp(28px,3.2vw,40px);}
+.venue-cnt p{color:#e0d9f4;font-size:15.5px;line-height:1.6;margin:16px 0 24px;}
+.venue-info{position:relative;z-index:2;display:flex;flex-direction:column;gap:12px;}
+.vi{display:flex;gap:14px;align-items:flex-start;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);border-radius:var(--rad-sm);padding:14px 18px;backdrop-filter:blur(6px);transition:background .2s;}
+.vi:hover{background:rgba(255,255,255,.12);}
+.vi-icon{font-size:22px;line-height:1;flex:none;margin-top:2px;}
+.vi-body{}
+.vi-lbl{color:#a8f0d4;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin:0 0 4px;}
+.vi-txt{color:#e8e0f8;font-size:13.5px;line-height:1.5;margin:0;}
+@media(max-width:820px){.venue{grid-template-columns:1fr;}.venue .vvl{background:linear-gradient(180deg,rgba(74,29,138,.96) 0%,rgba(20,155,137,.7));}}
+
+
+/* ── EVENTS GRID ── */
+.evt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;}
+.evt{position:relative;border-radius:var(--rad);overflow:hidden;min-height:300px;background:#241a52;padding:30px;display:flex;flex-direction:column;transition:transform .3s;}
+.evt:hover{transform:translateY(-5px);}
+.evt .eph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
+.evt .evl{position:absolute;inset:0;z-index:1;}
+.evt .etg{position:relative;z-index:2;color:#7be0bb;font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin:0 0 8px;}
+.evt h3{position:relative;z-index:2;color:#fff;font-size:25px;margin:0 0 12px;letter-spacing:-.01em;}
+.evt p{position:relative;z-index:2;color:#dcd5ef;font-size:14.5px;line-height:1.55;margin:0 0 24px;flex:1;}
+.evt a{position:relative;z-index:2;align-self:flex-start;border:1.5px solid rgba(255,255,255,.7);color:#fff;font-weight:600;font-size:13.5px;padding:10px 22px;border-radius:9999px;transition:all .15s;}
+.evt a:hover{background:#fff;color:#1b1145;}
+
+/* ── PARTNER LOGOS ── */
+.spon-tiers{display:flex;flex-direction:column;gap:28px;margin-top:36px;}
+.spon-tier-lbl{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);text-align:center;margin:0 0 14px;}
+.spon-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;}
+.spon-tile{height:64px;min-width:150px;padding:0 22px;background:#f4f1f9;border:1px solid #ede8f7;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:15px;color:#8a80a8;transition:border-color .15s,background .15s;}
+.spon-tile:hover{border-color:#c4b6f0;background:#ede8f7;}
+.spon-tier.diamante .spon-tile{height:78px;min-width:180px;font-size:17px;}
+.spon-tier.realizacao .spon-tile{background:#fff;border-color:#ede8f7;}
+.spon-tier.realizacao .spon-tile img{height:52px;width:auto;}
+
+/* ── FAQ ── */
+.faq-box{max-width:920px;margin:36px auto 0;background:var(--cream);border-radius:var(--rad);overflow:hidden;}
+.qa{border-bottom:1px solid rgba(26,18,48,.08);}
+.qa:last-child{border-bottom:none;}
+.qa button{width:100%;background:none;border:none;cursor:pointer;font-family:'Hanken Grotesk',sans-serif;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px clamp(20px,3vw,36px);text-align:left;}
+.qa .qt{font-size:18px;font-weight:600;color:var(--ink);}
+.qa .qi{flex:none;font-size:24px;color:var(--ink);transition:transform .25s;line-height:1;font-weight:400;}
+.qa.open .qi{transform:rotate(45deg);}
+.qa .qa-ans{max-height:0;overflow:hidden;transition:max-height .28s ease;}
+.qa .qa-ans p{color:var(--muted);font-size:16px;line-height:1.6;max-width:760px;padding:0 clamp(20px,3vw,36px) 26px;margin:0;}
+
+/* ── FINAL CTA ── */
+.final-cta{background:linear-gradient(120deg,#3a1d8c,#5b2bc7 50%,#3a1d8c);padding:clamp(56px,7vw,96px) 0;overflow:hidden;}
+.fcta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(36px,5vw,72px);align-items:center;}
+.diamond-wrap{display:flex;justify-content:center;}
+.diamond{width:min(360px,80vw);height:min(360px,80vw);background:radial-gradient(circle,#5fe0b0,transparent 62%);display:flex;align-items:center;justify-content:center;animation:pulseGlow 5s ease-in-out infinite;}
+.diamond .inner{width:62%;height:62%;background:linear-gradient(135deg,#8b3fe8,#5fe0b0);transform:rotate(45deg);border-radius:18px;box-shadow:0 0 80px rgba(139,63,232,.6);}
+@keyframes pulseGlow{0%,100%{opacity:.85;transform:scale(1);}50%{opacity:1;transform:scale(1.04);}}
+.fcta-ey{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6fe6b8;margin:0 0 14px;}
+.fcta-grid h2{color:#fff;font-size:clamp(32px,4vw,50px);}
+.fcta-grid p{color:#e0d9f4;font-size:17px;line-height:1.6;margin:18px 0 32px;max-width:520px;}
+
+/* ── FOOTER ── */
+footer{background:#fff;padding:clamp(40px,5vw,60px) 0;border-top:1px solid rgba(26,18,48,.08);}
+.foot{display:flex;align-items:flex-start;justify-content:space-between;gap:40px;flex-wrap:wrap;}
+.foot-brand-wrap .fb-mark{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+.fb-mark .fms{display:inline-flex;align-items:center;gap:3px;}
+.fms span{width:9px;height:20px;background:#6d28d9;border-radius:9px 0 0 9px;display:block;}
+.fms span.r{border-radius:0 9px 9px 0;margin-left:-2px;}
+.fms .fc1{width:20px;height:20px;border-radius:50%;background:linear-gradient(90deg,#1f9d6b 50%,#2f6fb3 50%);margin-left:4px;}
+.fms .fc2{width:20px;height:20px;border-radius:50%;background:#1a1230;margin-left:3px;}
+.fb-txt{color:#1a1230;font-weight:600;font-size:11.5px;line-height:1.12;}
+.foot-soc{display:flex;gap:10px;margin-top:8px;}
+.foot-soc a{width:28px;height:28px;border-radius:50%;background:#1a1230;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700;transition:background .15s;}
+.foot-soc a:hover{background:var(--accent);}
+.foot-copy{color:#9a95a8;font-size:13px;margin-top:14px;}
+.foot-links{display:flex;gap:clamp(18px,3vw,36px);flex-wrap:wrap;align-items:center;}
+.foot-links a{color:#1a1230;font-weight:600;font-size:14.5px;transition:color .15s;}
+.foot-links a:hover{color:#6d28d9;}
+
+/* ── THEME SWITCHER ── */
+.theme-sw{position:fixed;right:18px;bottom:18px;z-index:80;background:rgba(20,13,51,.92);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:10px;box-shadow:0 14px 40px rgba(0,0,0,.4);}
+.tsw-lbl{color:#9b91c4;font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin:0 0 8px;text-align:center;}
+.tsw-btns{display:flex;gap:6px;}
+.tsw-btn{font-family:'Hanken Grotesk',sans-serif;font-size:12px;font-weight:600;padding:7px 12px;border-radius:9999px;border:none;cursor:pointer;background:rgba(255,255,255,.1);color:rgba(255,255,255,.6);transition:all .18s;}
+.tsw-btn.active{background:var(--accent);color:#fff;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:980px){
+  .nav-links,.nav-right{display:none;}
+  .nav-burger{display:flex;}
+  .hero-grid{grid-template-columns:1fr;}
+  .stats-bar{grid-template-columns:repeat(2,1fr);}
+  .price-grid{grid-template-columns:1fr;}
+  .price-bg{display:none;}
+  .jp-layout{grid-template-columns:1fr;}
+  .jp-side{position:static;}
+}
+@media(max-width:680px){
+  .hero h1{font-size:40px;}
+  h2.sec{font-size:28px;}
+  .split.rev{direction:ltr;}
+  .diamond-wrap{display:none;}
+  .evt-grid{grid-template-columns:1fr;}
+  .sb-l{white-space:normal;}
+  .mc-stats{grid-template-columns:1fr;}
+}
+@media(max-width:560px){
+  .nav-logo{gap:7px;}
+  .nav-logo img{height:30px !important;padding:4px 8px !important;}
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="top" id="mnav">
+  <div class="container nav-inner">
+    <a href="#top" class="nav-logo" aria-label="PMIRS Summit 2026, início">
+      <img src="assets/logo-summit.png" alt="PMIRS Summit 2026" style="height:44px;width:auto;background:#fff;border-radius:8px;padding:6px 13px;">
+      <img src="assets/pmirs-horizontal-color.png" alt="PMI Rio Grande do Sul Chapter" style="height:44px;width:auto;background:#fff;border-radius:8px;padding:6px 13px;">
+    </a>
+    <div class="nav-links">
+      <a href="#why">O evento</a>
+      <a href="#jornada">Programação</a>
+      <a href="#palestrantes">Palestrantes</a>
+      <a href="#seja-patrocinador">Patrocínio</a>
+      <a href="#venue">Local</a>
+    </div>
+    <div class="nav-right" style="display:flex;align-items:center;gap:16px;">
+      <span style="color:#fff;font-weight:700;font-size:13.5px;white-space:nowrap;opacity:.92;">13–14 nov 2026</span>
+      <a href="https://www.sympla.com.br/evento/pmi-rs-summit-2026/3398919" target="_blank" class="btn btn-v btn-sm">Inscreva-se</a>
+    </div>
+    <button class="nav-burger" id="burger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mob-menu" id="mob">
+    <a href="#why"                onclick="closeMob()">O evento</a>
+    <a href="#agenda"             onclick="closeMob()">Programação</a>
+    <a href="#palestrantes"       onclick="closeMob()">Palestrantes</a>
+    <a href="#seja-patrocinador"  onclick="closeMob()">Patrocínio</a>
+    <a href="#venue"              onclick="closeMob()">Local</a>
+    <a href="#faq"                onclick="closeMob()">FAQ</a>
+    <a href="https://www.sympla.com.br/evento/pmi-rs-summit-2026/3398919" target="_blank" class="cta-mob" onclick="closeMob()">Inscreva-se agora</a>
+  </div>
+</nav>
+
+<span id="top"></span>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-glow"></div>
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <h1>
+          <span class="hw" style="animation-delay:.04s">Desenvolvendo</span>
+          <span class="hw hw-teal" style="animation-delay:.16s"> Pessoas</span><br>
+          <span class="hw" style="animation-delay:.28s">para um</span>
+          <span class="hw" style="animation-delay:.38s"> mundo</span><br>
+          <span class="hw hw-und" style="animation-delay:.48s">em Transformação</span>
+        </h1>
+        <p class="hero-support" style="animation:wordUp .55s .8s cubic-bezier(.22,1,.36,1) forwards;">O futuro começa com os passos de hoje.</p>
+      </div>
+      <div class="hero-card">
+        <h2>PMIRS Summit<br>2026</h2>
+        <p class="sub">13 e 14 de novembro &nbsp;<span style="opacity:.5;">/</span>&nbsp; Porto Alegre, RS</p>
+        <div class="hero-card-cta">
+          <a href="#lotes" class="btn btn-w">Ver inscrições</a>
+          <span class="early">Lote antecipado encerra<br><b>31 de julho de 2026</b></span>
+        </div>
+        <p class="desc">O maior evento presencial de Gerente de Projetos do RS. Dois dias para desenvolver as competências humanas essenciais e aprender a usar a IA como aliada para ampliar resultados e gerar impacto positivo.</p>
+        <div class="cd-row" aria-label="Contagem regressiva">
+          <div class="cd"><div class="n" id="cd-d">--</div><div class="l">Dias</div></div>
+          <div class="cd"><div class="n" id="cd-h">--</div><div class="l">Horas</div></div>
+          <div class="cd"><div class="n" id="cd-m">--</div><div class="l">Min</div></div>
+          <div class="cd"><div class="n" id="cd-s">--</div><div class="l">Seg</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="stats-outer">
+  <div class="stats-bar" role="list">
+    <div class="sb-i" role="listitem"><div class="sb-v">+15</div><div class="sb-l">Palestrantes</div></div>
+    <div class="sb-i" role="listitem"><div class="sb-v">+300</div><div class="sb-l">Participantes</div></div>
+    <div class="sb-i" role="listitem"><div class="sb-v">2 dias</div><div class="sb-l">Intensivos</div></div>
+    <div class="sb-i" role="listitem"><div class="sb-v">2</div><div class="sb-l">Palcos Simultâneos</div></div>
+    <div class="sb-i" role="listitem"><div class="sb-v">8</div><div class="sb-l">PDUs</div></div>
+  </div>
+</div>
+
+<!-- ── WHY ATTEND ── -->
+<section class="pad" id="why">
+  <div class="container">
+    <div class="why-grid" data-reveal>
+      <div>
+        <p class="eyebrow">Por que participar</p>
+        <h2 class="sec">Human + AI: o evento de Gerente de Projetos do ano</h2>
+        <p class="desc">A Inteligência Artificial está redefinindo como trabalhamos, aprendemos, lideramos e geramos valor. O diferencial não está na tecnologia em si, está na capacidade humana de se adaptar, inovar, colaborar e tomar decisões com propósito.</p>
+        <p class="desc" style="margin-top:12px;">No PMIRS Summit 2026 você descobre como profissionais e organizações podem se preparar para o futuro, desenvolvendo competências humanas essenciais e usando a IA como aliada para ampliar resultados e acelerar a inovação.</p>
+        <a href="#lotes" class="btn btn-v" style="margin-top:28px;">Garanta sua vaga</a>
+      </div>
+      <div class="why-feats">
+        <div class="why-feat">
+          <div class="thumb" style="background:linear-gradient(135deg,#0e3d35,#1b2a4a);">
+            <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="26" cy="16" r="7.5" stroke="#5fe0b0" stroke-width="2.2"/>
+              <path d="M11 44c0-8.284 6.716-15 15-15h.5c8.284 0 15 6.716 15 15" stroke="#5fe0b0" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M38 8l1.5 1.5M42 6l-1.5 1.5M40 4v2M40 12v2M36 8h2M44 8h-2" stroke="#a87bf0" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div><h3>Human Skills</h3><p>Desenvolva as competências que a IA não substitui: adaptabilidade, colaboração, liderança e decisões tomadas com propósito.</p></div>
+        </div>
+        <div class="why-feat">
+          <div class="thumb" style="background:linear-gradient(135deg,#1a0f3a,#2d1060);">
+            <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="14" y="14" width="24" height="24" rx="5" stroke="#a87bf0" stroke-width="2.2"/>
+              <circle cx="26" cy="26" r="5" stroke="#5fe0b0" stroke-width="2.2"/>
+              <circle cx="26" cy="26" r="1.5" fill="#5fe0b0"/>
+              <path d="M26 14v-3M26 41v-3M14 26h-3M41 26h-3M18.2 18.2l-2.1-2.1M35.9 35.9l-2.1-2.1M18.2 33.8l-2.1 2.1M35.9 16.1l-2.1 2.1" stroke="#a87bf0" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div><h3>IA na prática</h3><p>Aprenda a usar ferramentas de inteligência artificial como aliadas reais no seu dia a dia de gestão de projetos e liderança.</p></div>
+        </div>
+        <div class="why-feat">
+          <div class="thumb" style="background:linear-gradient(135deg,#1c2a0e,#0e3d1f);">
+            <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M26 8l3.5 8.5 9 .8-6.7 6 2 9L26 27.5 18.2 32.3l2-9-6.7-6 9-.8z" stroke="#5fe0b0" stroke-width="2.2" stroke-linejoin="round"/>
+              <path d="M20 40h12M23 44h6" stroke="#a87bf0" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M26 37v3" stroke="#a87bf0" stroke-width="2.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div><h3>Mais impacto</h3><p>8h de PDUs válidos para renovação de todas as certificações PMI. Certificado digital via Sympla.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PORTO ALEGRE ── -->
+<section style="padding:clamp(30px,5vw,60px) 0 clamp(60px,8vw,100px);">
+  <div class="container">
+    <div class="split" data-reveal>
+      <div class="circ" id="poa-circ">
+        <div class="circ-track" id="poa-track">
+          <img src="assets/poa-skyline.webp" alt="Porto Alegre" loading="lazy">
+          <img src="assets/poa-2.webp"       alt="Porto Alegre" loading="lazy">
+          <img src="assets/poa-3.webp"       alt="Porto Alegre" loading="lazy">
+          <img src="assets/poa-4.webp"       alt="Porto Alegre" loading="lazy">
+          <img src="assets/poa-5.webp"       alt="Porto Alegre" loading="lazy">
+        </div>
+      </div>
+      <div>
+        <p class="eyebrow">Cidade de Porto Alegre</p>
+        <h2 class="sec">Uma cidade que sabe como se transformar</h2>
+        <p class="desc">Porto Alegre não moldou apenas o Sul do Brasil, ela se reinventa constantemente. Capital gaúcha, polo de tecnologia e inovação, abriga o Tecnopuc: um dos maiores parques científicos do país, com startups de classe mundial e a PUCRS em um único campus vibrante.</p>
+        <p class="desc" style="margin-top:14px;">E agora, o lugar que reúne os principais profissionais de gestão de projetos do estado em um dia que muda perspectivas.</p>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:28px;">
+          <a href="#lotes" class="btn btn-v">Junte-se ao Summit</a>
+          <a href="#venue" class="btn btn-ov">Ver local</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SPEAKERS PREVIEW ── -->
+<section class="spk-dark" id="palestrantes">
+  <div class="container">
+    <div class="spk-wrap">
+      <div class="spk-lead">
+        <p class="eyebrow" style="color:#5fe0b0;">Workshops exclusivos · 13 de novembro</p>
+        <h2>Uma experiência que vai além da palestra</h2>
+        <p>Aprenda na prática com quem transforma complexidade em clareza. O PMIRS Summit 2026 traz workshops imersivos no primeiro dia do evento. Vagas limitadas, inscrição incluída no ingresso.</p>
+      </div>
+      <div class="spk-card-feat" data-reveal>
+        <img src="assets/gino-terentim.png" alt="Gino Terentim" class="ph" loading="lazy">
+        <div class="si">
+          <h3>Gino Terentim</h3>
+          <p class="ro">Doutor · Université de Bordeaux &nbsp;|&nbsp; Trainer Dale Carnegie &nbsp;|&nbsp; Palestrante TEDx</p>
+          <p class="bi">MBA em Gerenciamento de Projetos pela ESALQ/USP e MBE pela FEA/USP. Referência nacional em transformação organizacional, liderança e desenvolvimento humano. Combina rigor intelectual com autenticidade para criar workshops que desenvolvem pessoas e impulsionam equipes de alta performance.</p>
+          <p class="bi" style="margin-top:8px;color:#a87bf0;font-weight:600;">Certificações em Portfólios, Programas, Projetos, Change Management, Lean e Agile.</p>
+        </div>
+      </div>
+      <div class="spk-card-feat" data-reveal style="background:#1a1040;">
+        <div style="display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.04);height:100%;">
+          <svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="45" cy="32" r="20" fill="rgba(255,255,255,.1)"/>
+            <path d="M10 88c0-19.33 15.67-35 35-35s35 15.67 35 35" fill="rgba(255,255,255,.1)"/>
+          </svg>
+        </div>
+        <div class="si" style="justify-content:center;">
+          <h3 style="color:rgba(255,255,255,.35);">Em breve</h3>
+          <p class="ro" style="color:rgba(111,230,184,.4);">A ser confirmado</p>
+          <p class="bi" style="color:rgba(255,255,255,.25);">Siga o PMIRS no LinkedIn para ser o primeiro a saber quem é o próximo instrutor confirmado.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRICING ── -->
+<section class="pad" id="lotes">
+  <div class="container">
+    <div class="price-grid">
+      <div class="price-stack">
+        <div class="price-cards">
+          <div class="price-main">
+            <p class="price-eyebrow">🎫 Evento a Cegas</p>
+            <p class="price-sub">Preço especial antes da divulgação da grade completa. Quanto antes você comprar, menos você paga.</p>
+            <p class="pcat">FILIADO PMI</p>
+            <div class="pstrike"><s>R$ 620</s><span class="pbadge">37% OFF</span></div>
+            <div class="pamt">R$ 390 <small>BRL</small></div>
+            <p class="pcat" style="margin-top:24px;">NÃO FILIADO</p>
+            <div class="pstrike"><s>R$ 920</s><span class="pbadge">36% OFF</span></div>
+            <div class="pamt">R$ 590 <small>BRL</small></div>
+            <a href="https://www.sympla.com.br/evento/pmi-rs-summit-2026/3398919" target="_blank" class="btn btn-w" style="display:block;text-align:center;margin-top:30px;">Garantir meu ingresso</a>
+          </div>
+          <div class="price-bg">
+            <p class="pnext">Próximo lote</p>
+            <h3>Lote 1</h3>
+            <p class="pcat">FILIADO PMI</p>
+            <div class="am">R$ 620 <small>BRL</small></div>
+            <p class="pcat">NÃO FILIADO</p>
+            <div class="am">R$ 920 <small>BRL</small></div>
+          </div>
+        </div>
+        <div class="group-banner">
+          <span>Grupo de 5 ou mais? Desconto especial!</span>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <a href="mailto:vendas.summit@pmirs.org.br" class="btn btn-w btn-sm">Falar com equipe</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="eyebrow" style="color:var(--accent);">Inscreva-se hoje</p>
+        <h2 class="sec">Economia no lote antecipado. Sem esperar.</h2>
+        <p class="desc"><strong style="color:var(--ink);">Garanta sua vaga com desconto antes de 31 de julho.</strong> Filiados PMI economizam ainda mais, se estava em dúvida sobre a filiação, agora é a hora certa de decidir.</p>
+        <a href="https://www.pmi.org/membership.aspx?s_kwcid=AL!8620!3!697449239429!e!!g!!pmi&gclsrc=aw.ds&&utm_job_number=36&utm_region_name=latin_america&utm_funnel_stage=customer_acquisition&utm_marketing_channel=paid_media&utm_marketing_subchannel=search_ppc_branded&utm_start_date=05052024&utm_end_date=12312024&utm_source=google&utm_custom_field_one=pmi_branded_core_latin_america&utm_custom_field_two=brand_na_core&utm_custom_field_three=697449239429&utm_custom_field_four=pmi&utm_custom_field_five=e" target="_blank" class="btn btn-ov" style="margin-top:24px;">Explorar Filiação PMI®</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SEJA PATROCINADOR ── -->
+<section id="seja-patrocinador" style="padding:clamp(40px,6vw,90px) 0 clamp(60px,8vw,110px);">
+  <div class="container">
+    <div class="mc-card" data-reveal style="text-align:center;padding:clamp(32px,4vw,56px);">
+      <p class="mc-card ey">Seja Patrocinador</p>
+      <h2 class="sec" style="color:#fff;margin:12px auto 0;max-width:820px;font-size:clamp(28px,3.6vw,44px);">Coloque sua marca na frente de quem decide</h2>
+      <p style="max-width:720px;margin:18px auto 0;">As organizações que ganham agora não esperam condições perfeitas, elas constroem equipes que se transformam. Patrocinar o PMIRS Summit 2026 é um investimento direto nos profissionais que lideram o que vem a seguir.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:32px;">
+        <a href="assets/caderno-patrocinio-summit-2026.pdf" target="_blank" class="btn btn-w btn-sm">↓ Caderno de Patrocínio</a>
+        <a href="https://wa.me/5551991094427?text=Ol%C3%A1!%20Tenho%20interesse%20no%20PMIRS%20Summit%202026." target="_blank" class="btn btn-ow btn-sm">Contato</a>
+      </div>
+    </div>
+    <div class="mc-stats" style="margin-top:clamp(18px,2.5vw,28px);">
+      <div class="mc-stat" style="background:#6a2fb8;"><div class="v">500+</div><div class="d">profissionais de Gerente de Projetos do RS em um único dia</div></div>
+      <div class="mc-stat" style="background:#0e9488;"><div class="v">80%</div><div class="d">dos participantes influenciam decisões de compra</div></div>
+      <div class="mc-stat" style="background:#2f63b4;"><div class="v">4x</div><div class="d">mais engajamento vs. patrocínio só digital</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── JORNADA DE PALESTRAS ── -->
+<section class="pad" id="jornada" style="padding-top:0;">
+  <div class="container">
+    <p class="eyebrow" style="color:var(--accent);">Jornada de Palestras</p>
+    <h2 class="sec">Palestras Human + AI</h2>
+    <p class="desc" style="max-width:700px;">Cinco trilhas que conectam pessoas e inteligência artificial em cada dimensão da carreira, da liderança e do impacto.</p>
+    <div class="jp-grid">
+        <div class="jp-card">
+          <p class="jp-n">01</p>
+          <h3>Human + AI Career</h3>
+          <p class="jp-tag">O futuro das carreiras na era da inteligência artificial.</p>
+          <p>Como as profissões estão evoluindo, quais competências serão mais valorizadas e como profissionais podem se manter relevantes em um cenário de transformação acelerada.</p>
+        </div>
+        <div class="jp-card">
+          <p class="jp-n">02</p>
+          <h3>Human + AI Leadership</h3>
+          <p class="jp-tag">Liderança humana para equipes cada vez mais digitais.</p>
+          <p>Como inspirar, engajar e desenvolver pessoas em ambientes onde tecnologia, automação e inteligência artificial fazem parte da rotina.</p>
+        </div>
+        <div class="jp-card">
+          <p class="jp-n">03</p>
+          <h3>Human + AI Innovation</h3>
+          <p class="jp-tag">Criatividade humana potencializada pela tecnologia.</p>
+          <p>Como utilizar a IA para ampliar a inovação, acelerar resultados e transformar ideias em soluções de impacto.</p>
+        </div>
+        <div class="jp-card">
+          <p class="jp-n">04</p>
+          <h3>Human + AI Performance</h3>
+          <p class="jp-tag">Produtividade inteligente sem perder o fator humano.</p>
+          <p>Como equilibrar eficiência, bem-estar, tomada de decisão e alta performance em um mundo cada vez mais conectado.</p>
+        </div>
+        <div class="jp-card">
+          <p class="jp-n">05</p>
+          <h3>Human + AI Impact</h3>
+          <p class="jp-tag">Tecnologia a serviço das pessoas e da sociedade.</p>
+          <p>Reflexões sobre ética, responsabilidade, sustentabilidade e o papel da IA na construção de um futuro mais humano e inclusivo.</p>
+        </div>
+      </div>
+  </div>
+</section>
+
+<!-- ── SCHEDULE TABS ── -->
+<section id="schedule" style="padding:clamp(30px,4vw,50px) 0 clamp(56px,7vw,90px);">
+  <div class="container">
+    <div class="tab-row" role="tablist">
+      <button class="tab-btn active" role="tab" aria-selected="true"  onclick="stab(0)">Palco Principal</button>
+      <button class="tab-btn"        role="tab" aria-selected="false" onclick="stab(1)">Palco HP</button>
+    </div>
+    <div class="tab-panel active" id="tp0" role="tabpanel">
+      <div>
+        <p class="eyebrow">14 nov 2026 · Palco Principal</p>
+        <h2 class="sec" style="font-size:clamp(28px,3.4vw,40px);">Cronograma do evento</h2>
+        <p class="desc">Escolha o palco e acompanhe a programação. Os temas e palestrantes serão divulgados em breve.</p>
+        <div class="sess-list">
+          <div class="sess-row"><span class="t">07h45 - 08h10</span><span class="n">Credenciamento</span></div>
+          <div class="sess-row"><span class="t">08h10 - 08h30</span><span class="n">Abertura<span class="spk">Marcio Santos - Presidente do PMIRS</span></span></div>
+          <div class="sess-row"><span class="t">08h30 - 09h30</span><span class="n">Em breve<span class="spk">Palestrante a confirmar</span></span></div>
+          <div class="sess-row"><span class="t">09h30 - 10h00</span><span class="n">Coffee</span></div>
+          <div class="sess-row"><span class="t">10h00 - 11h00</span><span class="n">Em breve<span class="spk">Palestrante a confirmar</span></span></div>
+          <div class="sess-row"><span class="t">11h00 - 12h00</span><span class="n">Em breve<span class="spk">Palestrante a confirmar</span></span></div>
+          <div class="sess-row"><span class="t">12h00 - 13h00</span><span class="n">Almoço &amp; Networking</span></div>
+          <div class="sess-row"><span class="t">13h00 - 14h00</span><span class="n">Em breve<span class="spk">Palestrante a confirmar</span></span></div>
+          <div class="sess-row"><span class="t">14h00 - 15h00</span><span class="n">Em breve<span class="spk">Palestrante a confirmar</span></span></div>
+          <div class="sess-row"><span class="t">15h00 - 15h30</span><span class="n">Coffee</span></div>
+          <div class="sess-row"><span class="t">15h30 - 16h00</span><span class="n">Painel<span class="spk">Participantes a confirmar</span></span></div>
+          <div class="sess-row"><span class="t">16h00 - 17h00</span><span class="n">Em breve<span class="spk">Palestrante a confirmar</span></span></div>
+          <div class="sess-row"><span class="t">17h00 - 18h00</span><span class="n">Em breve<span class="spk">Gino Terentim</span></span></div>
+          <div class="sess-row"><span class="t">18h00 - 18h30</span><span class="n">Encerramento<span class="spk">Marcio Santos - Presidente do PMIRS</span></span></div>
+          <div class="sess-row"><span class="t">18h30 - 20h00</span><span class="n">Happy Hour &amp; Networking</span></div>
+        </div>
+      </div>
+      <div class="hl-cards">
+        <p class="jp-side-lbl" style="color:var(--accent);">Temas principais</p>
+        <div class="hl"><h4>Gestão de projetos com elas</h4><p>Protagonismo e liderança feminina na gestão de projetos.</p></div>
+        <div class="hl"><h4>Keynote PMI LATAM</h4><p>A visão do PMI para a América Latina e o futuro da profissão.</p></div>
+        <div class="hl"><h4>Melhores do ano 2026</h4><p>Reconhecimento dos cases e profissionais que marcaram o ano.</p></div>
+      </div>
+    </div>
+    <div class="tab-panel" id="tp1" role="tabpanel">
+      <div>
+        <p class="eyebrow">14 nov 2026 · Palco HP</p>
+        <h2 class="sec" style="font-size:clamp(28px,3.4vw,40px);">Cronograma do evento</h2>
+        <p class="desc">Escolha o palco e acompanhe a programação. Os temas e palestrantes serão divulgados em breve.</p>
+        <div class="sess-list">
+          <div class="sess-row"><span class="t">08h30 - 09h30</span><span class="n">Em breve<span class="spk">Palestrante a confirmar</span></span></div>
+          <div class="sess-row"><span class="t">09h30 - 10h00</span><span class="n">Coffee</span></div>
+          <div class="sess-row"><span class="t">10h00 - 11h00</span><span class="n">Em breve<span class="spk">Palestrante a confirmar</span></span></div>
+          <div class="sess-row"><span class="t">11h00 - 12h00</span><span class="n">Em breve<span class="spk">Palestrante a confirmar</span></span></div>
+          <div class="sess-row"><span class="t">12h00 - 13h00</span><span class="n">Almoço &amp; Networking</span></div>
+          <div class="sess-row"><span class="t">13h00 - 14h00</span><span class="n">Em breve<span class="spk">Palestrante a confirmar</span></span></div>
+          <div class="sess-row"><span class="t">14h00 - 15h00</span><span class="n">Em breve<span class="spk">Palestrante a confirmar</span></span></div>
+          <div class="sess-row"><span class="t">15h00 - 15h30</span><span class="n">Coffee</span></div>
+          <div class="sess-row"><span class="t">15h30 - 16h00</span><span class="n">Em breve<span class="spk">Palestrante a confirmar</span></span></div>
+          <div class="sess-row"><span class="t">16h00 - 17h00</span><span class="n">Em breve<span class="spk">Palestrante a confirmar</span></span></div>
+        </div>
+      </div>
+      <div class="hl-cards">
+        <p class="jp-side-lbl" style="color:var(--accent);">Temas principais</p>
+        <div class="hl"><h4>Gestão de projetos com elas</h4><p>Protagonismo e liderança feminina na gestão de projetos.</p></div>
+        <div class="hl"><h4>Keynote PMI LATAM</h4><p>A visão do PMI para a América Latina e o futuro da profissão.</p></div>
+        <div class="hl"><h4>Melhores do ano 2026</h4><p>Reconhecimento dos cases e profissionais que marcaram o ano.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── KEYNOTE DARK ── -->
+<section class="key-dark">
+  <div class="container">
+    <div style="max-width:1100px;margin:0 auto;text-align:center;">
+      <h2 style="color:#fff;font-size:clamp(30px,4vw,48px);line-height:1.08;margin:0 auto 16px;max-width:760px;">Uma grade <span style="color:#5fe0b0;">Human</span> <span style="color:#a87bf0;">+ AI</span> construída para desenvolver quem lidera.</h2>
+      <p style="color:#cdc5e8;font-size:17px;line-height:1.55;margin:0 auto 46px;max-width:560px;">Competências humanas e inteligência artificial como aliada, ideias e histórias reais para ampliar seu impacto na gestão de projetos.</p>
+    </div>
+    <div class="key-grid" style="max-width:1100px;margin:0 auto;">
+      <div class="key-tba" data-reveal>
+        <div class="circ-ph"></div>
+        <h3>Em breve</h3>
+        <p style="color:#6fe6b8;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin:0 0 10px;">A ser confirmado</p>
+        <p>Siga o PMIRS no <a href="https://www.linkedin.com/company/PMIRS" target="_blank">LinkedIn</a> para ser o primeiro a saber quem é o próximo palestrante confirmado.</p>
+      </div>
+      <div class="key-tba" data-reveal>
+        <div class="circ-ph"></div>
+        <h3>Em breve</h3>
+        <p style="color:#6fe6b8;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin:0 0 10px;">A ser confirmado</p>
+        <p>Siga o PMIRS no <a href="https://www.linkedin.com/company/PMIRS" target="_blank">LinkedIn</a> para ser o primeiro a saber quem é o próximo palestrante confirmado.</p>
+      </div>
+      <div class="key-tba" data-reveal>
+        <div class="circ-ph"></div>
+        <h3>Em breve</h3>
+        <p style="color:#6fe6b8;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin:0 0 10px;">A ser confirmado</p>
+        <p>Siga o PMIRS no <a href="https://www.linkedin.com/company/PMIRS" target="_blank">LinkedIn</a> para ser o primeiro a saber quem é o próximo palestrante confirmado.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:42px;">
+      <a href="https://www.sympla.com.br/evento/pmi-rs-summit-2026/3398919" target="_blank" class="btn btn-w" style="box-shadow:0 0 30px rgba(124,58,237,.5);">Inscreva-se e Economize</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── SPEAKER SPOTLIGHT 1 ── -->
+<section class="spot" style="background:#fff;">
+  <div class="container">
+    <div class="split" data-reveal>
+      <div class="circ"><img src="assets/gino-terentim.png" alt="Gino Terentim" loading="lazy"></div>
+      <div>
+        <p class="eyebrow">Destaque de Keynote</p>
+        <h2 class="sec">Gino Terentim</h2>
+        <p style="font-size:17px;font-weight:600;line-height:1.5;margin-top:12px;">Doutor · Université de Bordeaux · Trainer Dale Carnegie · Palestrante TEDx</p>
+        <p class="desc">MBA em Gerenciamento de Projetos pela ESALQ/USP e MBE pela FEA/USP. Referência nacional em transformação organizacional, liderança e desenvolvimento humano. Combina rigor intelectual com autenticidade para criar workshops que desenvolvem pessoas e impulsionam equipes de alta performance.</p>
+        <p class="desc" style="margin-top:12px;">Certificações em Portfólios, Programas, Projetos, Change Management, Lean e Agile.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SPEAKER SPOTLIGHT 2 ── -->
+<section class="spot" style="background:var(--cream);">
+  <div class="container">
+    <div class="split rev" data-reveal>
+      <div class="circ" style="display:flex;align-items:center;justify-content:center;background:#e9e3f5;">
+        <svg width="150" height="150" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="45" cy="32" r="20" fill="rgba(124,58,237,.18)"/>
+          <path d="M10 88c0-19.33 15.67-35 35-35s35 15.67 35 35" fill="rgba(124,58,237,.18)"/>
+        </svg>
+      </div>
+      <div>
+        <p class="eyebrow">Destaque de Keynote</p>
+        <h2 class="sec">Em breve</h2>
+        <p style="font-size:17px;font-weight:600;line-height:1.5;margin-top:12px;color:var(--accent);">A ser confirmado</p>
+        <p class="desc">Siga o PMIRS no <a href="https://www.linkedin.com/company/PMIRS" target="_blank" style="color:var(--accent);font-weight:600;">LinkedIn</a> para ser o primeiro a saber quem é o próximo palestrante confirmado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── VENUE ── -->
+<section id="venue" style="padding:0 0 clamp(50px,6vw,80px);">
+  <div class="container">
+    <div class="venue">
+      <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80" alt="Tecnopuc, PUCRS, Porto Alegre" class="vph" loading="lazy">
+      <div class="vvl"></div>
+      <div class="venue-cnt">
+        <p class="vcat">Local do evento</p>
+        <h2 class="sec" style="color:#fff;">Tecnopuc, PUCRS</h2>
+        <p>Um dos maiores parques tecnológicos do Brasil, no campus da PUCRS em Porto Alegre. Infraestrutura de ponta, auditórios modernos e o coração inovador do Rio Grande do Sul, o ambiente perfeito para um evento de alto nível.</p>
+        <a href="https://maps.google.com?q=Tecnopuc+PUCRS+Porto+Alegre" target="_blank" class="btn btn-ow">Ver no Mapa</a>
+      </div>
+      <div class="venue-info">
+        <div class="vi">
+          <span class="vi-icon">📍</span>
+          <div class="vi-body">
+            <p class="vi-lbl">Endereço</p>
+            <p class="vi-txt">Av. Ipiranga, 6681, Prédio 32<br>Porto Alegre/RS · CEP 90619-900</p>
+          </div>
+        </div>
+        <div class="vi">
+          <span class="vi-icon">🚗</span>
+          <div class="vi-body">
+            <p class="vi-lbl">Estacionamento</p>
+            <p class="vi-txt">Estacionamento pago no campus (Indigo), acesso pelo Portão 4, na Rua Prof. Cristiano Fischer.</p>
+          </div>
+        </div>
+        <div class="vi">
+          <span class="vi-icon">🚌</span>
+          <div class="vi-body">
+            <p class="vi-lbl">Transporte público</p>
+            <p class="vi-txt">Linhas 343, 353, T1, T4 e T12. Parada Ipiranga–PUCRS a cerca de 300 m (6 min a pé).</p>
+          </div>
+        </div>
+        <div class="vi">
+          <span class="vi-icon">✈️</span>
+          <div class="vi-body">
+            <p class="vi-lbl">Aeroporto</p>
+            <p class="vi-txt">Aeroporto Salgado Filho a cerca de 9 km, aprox. 20 min de carro.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PARTNERS ── -->
+<section id="patrocinadores" style="padding:clamp(20px,3vw,40px) 0 clamp(56px,7vw,90px);">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(40px,5vw,72px);align-items:center;">
+      <div>
+        <p class="eyebrow">Comunidade</p>
+        <h2 class="sec">Faça parte da comunidade no WhatsApp</h2>
+        <p class="desc">Entre no grupo do PMIRS Summit 2026 e fique por dentro de tudo: novidades, palestrantes confirmados, lotes e conexões com outros profissionais de gestão de projetos.</p>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:28px;">
+          <!-- TODO: substituir o href="#" pelo link de convite do grupo do WhatsApp -->
+          <a href="#" target="_blank" id="wpp-community" class="btn" style="background:#25D366;color:#fff;border:none;display:inline-flex;align-items:center;gap:10px;box-shadow:0 10px 30px rgba(37,211,102,.35);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-1.207zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            Entrar no grupo do WhatsApp
+          </a>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:center;" data-reveal>
+        <img src="assets/logo-summit.png" alt="PMIRS Summit" style="max-width:420px;width:100%;height:auto;" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SPONSOR LOGOS ── -->
+<section style="padding:0 0 clamp(50px,7vw,80px);">
+  <div class="container">
+    <p style="text-align:center;" class="eyebrow">Apoio &amp; Realização</p>
+    <div class="spon-tiers">
+      <div class="spon-tier diamante">
+        <p class="spon-tier-lbl">Patrocinador Diamante</p>
+        <div class="spon-row">
+          <div class="spon-tile" style="border-style:dashed;color:#b3a9d0;">Em breve</div>
+          <div class="spon-tile" style="border-style:dashed;color:#b3a9d0;">Em breve</div>
+          <div class="spon-tile" style="border-style:dashed;color:#b3a9d0;">Em breve</div>
+        </div>
+      </div>
+      <div class="spon-tier">
+        <p class="spon-tier-lbl">Patrocinador Premium</p>
+        <div class="spon-row">
+          <div class="spon-tile" style="border-style:dashed;color:#b3a9d0;">Em breve</div>
+          <div class="spon-tile" style="border-style:dashed;color:#b3a9d0;">Em breve</div>
+          <div class="spon-tile" style="border-style:dashed;color:#b3a9d0;">Em breve</div>
+        </div>
+      </div>
+      <div class="spon-tier">
+        <p class="spon-tier-lbl">Patrocinador Master</p>
+        <div class="spon-row">
+          <div class="spon-tile" style="border-style:dashed;color:#b3a9d0;">Em breve</div>
+          <div class="spon-tile" style="border-style:dashed;color:#b3a9d0;">Em breve</div>
+          <div class="spon-tile" style="border-style:dashed;color:#b3a9d0;">Em breve</div>
+        </div>
+      </div>
+      <div class="spon-tier realizacao">
+        <p class="spon-tier-lbl">Realização</p>
+        <div class="spon-row">
+          <div class="spon-tile"><img src="assets/logo-pmirs.png" alt="PMI, Rio Grande do Sul Chapter"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section id="faq" style="background:#fff;padding:clamp(40px,5vw,70px) 0 clamp(56px,7vw,90px);">
+  <div class="container">
+    <h2 class="sec" style="text-align:center;font-size:clamp(30px,3.6vw,44px);">Perguntas Frequentes</h2>
+    <div class="faq-box">
+      <div class="qa open">
+        <button onclick="qfaq(this)" aria-expanded="true"><span class="qt">O que é o PMIRS Summit 2026?</span><span class="qi">+</span></button>
+        <div class="qa-ans"><p>O PMIRS Summit é o maior evento anual de gestão de projetos do Rio Grande do Sul, promovido pelo capítulo gaúcho do PMI. Em 2026 acontece presencialmente no Tecnopuc, PUCRS, Porto Alegre, reunindo +500 Gerentes de Projetos.</p></div>
+      </div>
+      <div class="qa">
+        <button onclick="qfaq(this)" aria-expanded="false"><span class="qt">O evento é presencial ou online?</span><span class="qi">+</span></button>
+        <div class="qa-ans"><p>Presencial. O Summit 2026 acontece exclusivamente no Tecnopuc, Porto Alegre/RS. Não haverá transmissão online nesta edição.</p></div>
+      </div>
+      <div class="qa">
+        <button onclick="qfaq(this)" aria-expanded="false"><span class="qt">Quantas PDUs vou acumular?</span><span class="qi">+</span></button>
+        <div class="qa-ans"><p>Participantes ganham até 8 PDUs válidos para renovação de todas as certificações PMI. O certificado é emitido pelo Sympla após o evento.</p></div>
+      </div>
+      <div class="qa">
+        <button onclick="qfaq(this)" aria-expanded="false"><span class="qt">Como funciona a inscrição e o pagamento?</span><span class="qi">+</span></button>
+        <div class="qa-ans"><p>Inscrições via Sympla (evento 3398919). Cartão de crédito, Pix ou boleto. Para NF em CNPJ: <a href="mailto:vendas.summit@pmirs.org.br" style="color:var(--accent);">vendas.summit@pmirs.org.br</a>.</p></div>
+      </div>
+      <div class="qa">
+        <button onclick="qfaq(this)" aria-expanded="false"><span class="qt">Filiados PMI têm desconto?</span><span class="qi">+</span></button>
+        <div class="qa-ans"><p>Sim. Membros ativos do PMI têm acesso à categoria "Filiado PMI" com valor reduzido em todos os lotes. Número de membro solicitado na inscrição.</p></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:32px;">
+      <a href="mailto:vendas.summit@pmirs.org.br" class="btn btn-ov">Mais dúvidas?</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FINAL CTA ── -->
+<section class="final-cta">
+  <div class="container">
+    <div class="fcta-grid">
+      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;">
+        <img src="assets/logo-summit.png" alt="PMIRS Summit 2026" style="width:100%;max-width:320px;height:auto;background:#fff;border-radius:14px;padding:16px 24px;">
+        <img src="assets/pmirs-horizontal-white.png" alt="PMI Rio Grande do Sul Chapter" style="width:100%;max-width:360px;height:auto;">
+      </div>
+      <div>
+        <p class="fcta-ey">Não perca</p>
+        <h2 class="sec" style="color:#fff;">Porto Alegre não espera.<br>Você também não deveria.</h2>
+        <p>Esta é a profissão que faz as coisas acontecerem. Não eventualmente. De verdade. Junte-se aos seus colegas Gerentes de Projetos e coloque suas ideias em movimento. O Summit 2026 é onde nos encontramos em novembro.</p>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;">
+          <a href="https://www.sympla.com.br/evento/pmi-rs-summit-2026/3398919" target="_blank" class="btn btn-w" style="font-size:16px;padding:15px 34px;box-shadow:0 10px 30px rgba(0,0,0,.2);">Entre no Movimento</a>
+          <!-- TODO: substituir o href="#" pelo link de convite do grupo do WhatsApp -->
+          <a href="#" target="_blank" class="btn" style="font-size:16px;padding:15px 30px;background:#25D366;color:#fff;border:none;display:inline-flex;align-items:center;gap:10px;box-shadow:0 10px 30px rgba(37,211,102,.35);"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-1.207zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>Comunidade no WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="container foot">
+    <div class="foot-brand-wrap">
+      <div class="fb-mark">
+        <img src="assets/pmirs-horizontal-white.png" alt="PMI Rio Grande do Sul Chapter" style="height:40px;width:auto;">
+      </div>
+      <div class="foot-soc">
+        <a href="https://www.linkedin.com/company/PMIRS" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+        <a href="https://www.instagram.com/pmirs" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+        <a href="https://www.youtube.com/@pmirs" target="_blank" rel="noopener" aria-label="YouTube">yt</a>
+      </div>
+      <p class="foot-copy">© 2026 Project Management Institute, Inc.</p>
+    </div>
+    <div class="foot-links">
+      <a href="https://wa.me/5551991094427?text=Ol%C3%A1!%20Tenho%20interesse%20no%20PMIRS%20Summit%202026." target="_blank">Contato</a>
+      <a href="https://pmirs.org.br" target="_blank" rel="noopener">Sobre o PMIRS</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ── THEME SWITCHER ── -->
+<div class="theme-sw" role="group" aria-label="Tema visual">
+  <p class="tsw-lbl">Visual</p>
+  <div class="tsw-btns">
+    <button class="tsw-btn active" onclick="setTheme('move')">Mover</button>
+    <button class="tsw-btn" onclick="setTheme('institute')">Clássico</button>
+    <button class="tsw-btn" onclick="setTheme('momentum')">Impacto</button>
+  </div>
+</div>
+
+<script>
+(function(){
+'use strict';
+
+// countdown
+var evt = new Date('2026-11-13T08:30:00-03:00').getTime();
+function pad(n){ return String(n).padStart(2,'0'); }
+function tick(){
+  var d = Math.max(0, evt - Date.now());
+  document.getElementById('cd-d').textContent = Math.floor(d/864e5);
+  document.getElementById('cd-h').textContent = pad(Math.floor(d%864e5/36e5));
+  document.getElementById('cd-m').textContent = pad(Math.floor(d%36e5/6e4));
+  document.getElementById('cd-s').textContent = pad(Math.floor(d%6e4/1e3));
+}
+tick(); setInterval(tick,1000);
+
+// nav shadow
+var nav = document.getElementById('mnav');
+window.addEventListener('scroll', function(){ nav.classList.toggle('scrolled', window.scrollY>20); }, {passive:true});
+
+// mobile menu
+var burger = document.getElementById('burger');
+var mob    = document.getElementById('mob');
+burger.addEventListener('click', function(){
+  var o = mob.classList.toggle('open');
+  burger.setAttribute('aria-expanded', String(o));
+});
+window.closeMob = function(){ mob.classList.remove('open'); burger.setAttribute('aria-expanded','false'); };
+
+// reveal
+if('IntersectionObserver' in window){
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){ e.target.style.opacity='1'; e.target.style.transform='none'; io.unobserve(e.target); }
+    });
+  },{threshold:0.1});
+  document.querySelectorAll('[data-reveal]').forEach(function(el){
+    el.style.opacity='0';
+    el.style.transform='translateY(28px)';
+    el.style.transition='opacity .7s ease, transform .7s ease';
+    io.observe(el);
+  });
+}
+
+// FAQ
+window.qfaq = function(btn){
+  var qa  = btn.parentElement;
+  var ans = qa.querySelector('.qa-ans');
+  var was = qa.classList.contains('open');
+  document.querySelectorAll('.qa').forEach(function(q){
+    q.classList.remove('open');
+    q.querySelector('.qa-ans').style.maxHeight=null;
+    q.querySelector('button').setAttribute('aria-expanded','false');
+  });
+  if(!was){
+    qa.classList.add('open');
+    ans.style.maxHeight = ans.scrollHeight+'px';
+    btn.setAttribute('aria-expanded','true');
+  }
+};
+(function(){ var f=document.querySelector('.qa.open .qa-ans'); if(f) f.style.maxHeight=f.scrollHeight+'px'; })();
+
+// schedule tabs
+window.stab = function(i){
+  document.querySelectorAll('.tab-btn').forEach(function(b,j){ b.classList.toggle('active',j===i); b.setAttribute('aria-selected',String(j===i)); });
+  document.querySelectorAll('.tab-panel').forEach(function(p,j){ p.classList.toggle('active',j===i); });
+};
+
+// theme switcher
+var themes = {
+  move:     {'--accent':'#7c3aed','--accent-p':'#6d28d9','--teal':'#0e9488','--hero-grad':'linear-gradient(105deg,#1c9b86 0%,#2f63b4 40%,#5b2da4 74%,#6d2c9c 100%)','--rad':'22px','--rad-sm':'14px','--dw':'800','--dt':'-0.02em','--cream':'#f4f1ea','--navy':'#1b1145','--navy2':'#140d33'},
+  institute:{'--accent':'#5b2d8e','--accent-p':'#4a236f','--teal':'#5b2d8e','--hero-grad':'linear-gradient(120deg,#1b1145 0%,#3a2270 58%,#5b2d8e 100%)','--rad':'8px','--rad-sm':'6px','--dw':'700','--dt':'-0.01em','--cream':'#f1eee8','--navy':'#241a52','--navy2':'#1a1240'},
+  momentum: {'--accent':'#7c3aed','--accent-p':'#6d28d9','--teal':'#11b98a','--hero-grad':'linear-gradient(102deg,#0fd39a 0%,#2f6fb3 38%,#6a2fb8 72%,#c026a8 100%)','--rad':'4px','--rad-sm':'3px','--dw':'800','--dt':'-0.035em','--cream':'#efece4','--navy':'#0c0a16','--navy2':'#070510'}
+};
+var labels = {move:'Mover',institute:'Clássico',momentum:'Impacto'};
+window.setTheme = function(name){
+  var t = themes[name]; if(!t) return;
+  Object.keys(t).forEach(function(k){ document.documentElement.style.setProperty(k,t[k]); });
+  document.querySelectorAll('.tsw-btn').forEach(function(b){ b.classList.toggle('active', b.textContent.trim()===labels[name]); });
+};
+})();
+
+/* ── POA SLIDESHOW ── */
+(function(){
+  var track = document.getElementById('poa-track');
+  if(!track) return;
+  var imgs = track.querySelectorAll('img');
+  var n = imgs.length, cur = 0;
+  function slide(){
+    cur = (cur + 1) % n;
+    track.style.transform = 'translateX(-' + (cur * 100) + '%)';
+  }
+  setInterval(slide, 4000);
+})();
+</script>
+</body>
+</html>
+

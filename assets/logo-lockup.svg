@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 120" role="img" aria-label="PMI Rio Grande do Sul lockup">
+  <g transform="translate(10,10)">
+    <use></use>
+  </g>
+  
+  <g transform="translate(10,10) scale(0.1)">
+    <rect x="0" y="0" width="500" height="500" fill="#000000" mask="url(#pmask)"></rect>
+  </g>
+  <text x="130" y="55" font-family="Fraunces, Georgia, serif" font-size="36" font-weight="700" fill="#242016" letter-spacing="-1">PMI Rio Grande do Sul</text>
+  <text x="130" y="92" font-family="Manrope, sans-serif" font-size="18" font-weight="500" fill="#606060" letter-spacing="0.12em">BRAZIL CHAPTER</text>
+</svg>
