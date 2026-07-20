@@ -1,0 +1,25 @@
+# Entregáveis brutos do designer / material de origem (não são do site)
+*.zip
+1260517182629-Logo/
+LOGO/
+
+# Fotos originais de câmera (~70 MB) usadas só pelo caderno de patrocínio
+Fotos eventos passados/
+
+# Ferramental do Claude Code
+.claude/
+.remember/
+
+# Notas internas de conteúdo (fonte da verdade editorial, não publicada)
+textos-index-e.md
+NOTAS-lotes-precos.md
+
+# Duplicata de trabalho: o conteúdo publicado é index.html
+index-e.html
+
+# Fora do site publicado: depende de 'Fotos eventos passados/' (ignorada) e
+# ainda traz a data antiga (07/11). Decidir antes de publicar.
+caderno-patrocinio-2026.html
+
+# Design system de referencia, nao referenciado por nenhuma pagina
+css/
