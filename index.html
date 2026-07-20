@@ -59,7 +59,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Schibsted+Grotesk:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Schibsted+Grotesk:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{
   --ink:#1a1230;
@@ -69,6 +69,7 @@
   --violet:#7C3AED;
   --violet-d:#6D28D9;
   --tang-lt:#FF9A5C;
+  --brand-orange:#FC6226;   /* laranja vivo do manual: "save the date", "KEYNOTE CONFIRMADO" */
   --teal:#E05B17;
   --green:#C2410C;
   --navy:#1b1145;
@@ -131,12 +132,21 @@ nav.top.scrolled{box-shadow:0 4px 30px rgba(20,13,51,.55);}
 .hero{position:relative;background:var(--hero-grad);padding:clamp(56px,8vw,104px) 0 0;overflow:hidden;}.stats-outer{position:relative;z-index:4;}
 /* Foto oficial da marca. O gradiente acima permanece como paint-before-decode. */
 .hero::before{content:'';position:absolute;inset:0;z-index:0;background-image:image-set(url('assets/hero-summit.webp') type('image/webp'),url('assets/hero-summit.jpg') type('image/jpeg'));background-position:center;background-size:cover;}
-/* Scrim direcional: escurece a esquerda (onde fica o h1, e onde o sujeito da foto
-   está) e abre à direita, deixando a arte respirar atrás do .hero-card.
-   A passada vertical não é opcional — a .stats-bar sobe -50% sobre esta borda. */
-.hero-glow{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(20,13,51,0) 55%,rgba(20,13,51,.92) 100%),linear-gradient(90deg,rgba(20,13,51,.90) 0%,rgba(20,13,51,.74) 42%,rgba(20,13,51,.42) 100%);}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,72px);align-items:center;padding-bottom:96px;position:relative;z-index:2;}
-.hero h1{color:#fff;font-size:clamp(28px,4.2vw,58px);line-height:1.1;margin:0;text-align:center;}
+/* Manual da marca: a arte é protagonista, não textura de fundo. Sem véu por cima
+   dela — o texto vive no espaço negativo à DIREITA, que já é roxo escuro na foto.
+   Só um reforço suave à direita (para o texto) e na base (a .stats-bar sobe -50%
+   sobre esta borda e precisa de fundo sólido). A esquerda fica intocada. */
+.hero-glow{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(20,13,51,0) 62%,rgba(20,13,51,.90) 100%),linear-gradient(90deg,rgba(20,13,51,0) 38%,rgba(20,13,51,.30) 62%,rgba(20,13,51,.62) 100%);}
+/* Coluna 1 fica vazia de proposito: e onde a arte respira (sujeito da foto).
+   Todo o conteudo vai para a coluna 2, o espaco negativo do material oficial. */
+.hero-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(28px,5vw,64px);align-items:center;padding-bottom:96px;position:relative;z-index:2;}
+.hero-art{min-height:clamp(280px,42vw,560px);}
+.hero-col{display:flex;flex-direction:column;gap:clamp(24px,3vw,38px);}
+/* "Human + IA": headline oficial. Peso leve e corpo grande, como no manual —
+   o contrario do bold pesado que estava aqui antes. */
+.hero h1{color:#fff;font-size:clamp(46px,7.4vw,104px);font-weight:300;line-height:1.02;letter-spacing:-.03em;margin:0;text-align:left;}
+.hero h1 .plus{color:var(--brand-orange);font-weight:300;}
+.hero-tagline{color:#fff;font-size:clamp(17px,1.9vw,25px);font-weight:400;line-height:1.34;margin:20px 0 0;max-width:22ch;opacity:0;animation:wordUp .55s .75s cubic-bezier(.22,1,.36,1) forwards;}
 @keyframes wordUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
 @keyframes lineGrow{from{width:0}to{width:100%}}
 .hw{display:inline-block;opacity:0;animation:wordUp .55s cubic-bezier(.22,1,.36,1) forwards;}
@@ -214,6 +224,15 @@ p.desc{color:var(--muted);font-size:17px;line-height:1.6;margin:18px 0 0;}
 .spk-card-feat h3{color:#fff;font-size:clamp(22px,2.4vw,30px);margin:0;}
 .spk-card-feat .ro{color:#FF9A5C;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin:0;line-height:1.6;}
 .spk-card-feat .bi{color:#d6cef0;font-size:14px;line-height:1.6;margin:0;}
+/* Selo de LinkedIn ao lado do nome do palestrante. Reutilizavel em qualquer card. */
+.li-badge{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:6px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);vertical-align:middle;margin-left:10px;transition:background .18s,border-color .18s,transform .18s;}
+.li-badge:hover{background:#0A66C2;border-color:#0A66C2;transform:translateY(-2px);}
+.li-badge svg{width:14px;height:14px;fill:#fff;display:block;}
+/* Sobre fundo claro (secao Spotlight) */
+.li-badge.on-light{background:rgba(26,18,48,.08);border-color:rgba(26,18,48,.16);}
+.li-badge.on-light svg{fill:#1a1230;}
+.li-badge.on-light:hover{background:#0A66C2;border-color:#0A66C2;}
+.li-badge.on-light:hover svg{fill:#fff;}
 @media(max-width:680px){.spk-card-feat{grid-template-columns:1fr;}.spk-card-feat .ph{height:280px;}}
 
 /* ── PRICING ── */
@@ -302,7 +321,7 @@ p.desc{color:var(--muted);font-size:17px;line-height:1.6;margin:18px 0 0;}
 .hl p{color:#d6cef0;font-size:13.5px;line-height:1.5;margin:0;}
 
 /* ── KEYNOTE DARK ── */
-.key-dark{background:linear-gradient(150deg,#2a1660,#1b1145 55%,#10342b);padding:clamp(56px,7vw,96px) 0;}
+.key-dark{background:linear-gradient(150deg,#2a1660,#1b1145 55%,#3a1d8c);padding:clamp(56px,7vw,96px) 0;}
 .key-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;align-items:stretch;margin-top:46px;}
 .key-card{position:relative;border-radius:var(--rad);overflow:hidden;min-height:380px;background:#241a52;padding:26px;display:flex;flex-direction:column;justify-content:flex-end;}
 .key-card .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
@@ -311,7 +330,7 @@ p.desc{color:var(--muted);font-size:17px;line-height:1.6;margin:18px 0 0;}
 .key-card h3{color:#fff;font-size:23px;margin:0 0 4px;}
 .key-card .kr{color:#a87bf0;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin:0 0 12px;}
 .key-card .kb{color:#d6cef0;font-size:13.5px;line-height:1.5;margin:0;}
-.key-tba{border-radius:var(--rad);background:linear-gradient(180deg,#10342b,#0a1f18);min-height:380px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px;}
+.key-tba{border-radius:var(--rad);background:linear-gradient(180deg,#2a1560,#1a0f3d);min-height:380px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px;}
 .key-tba .circ-ph{width:88px;height:88px;border-radius:50%;background:rgba(255,255,255,.06);margin-bottom:22px;}
 .key-tba h3{color:#fff;font-size:19px;font-weight:700;margin:0 0 10px;}
 .key-tba p{color:#cdc5e8;font-size:14px;margin:0;}
@@ -320,7 +339,7 @@ p.desc{color:var(--muted);font-size:17px;line-height:1.6;margin:18px 0 0;}
 .spot{padding:clamp(50px,6vw,80px) 0;}
 
 /* ── FULL LIST CTA ── */
-.full-cta-card{position:relative;border-radius:var(--rad);overflow:hidden;background:linear-gradient(120deg,#10342b,#1b1145 60%,#241a52);padding:clamp(36px,5vw,60px);min-height:240px;}
+.full-cta-card{position:relative;border-radius:var(--rad);overflow:hidden;background:linear-gradient(120deg,#7a2d10,#1b1145 60%,#241a52);padding:clamp(36px,5vw,60px);min-height:240px;}
 .full-cta-card::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 75% 60%,rgba(47,111,179,.4),transparent 55%);pointer-events:none;}
 .full-cta-inner{position:relative;z-index:1;max-width:440px;}
 .full-cta-inner h2{color:#fff;font-size:clamp(30px,3.6vw,44px);line-height:1.04;margin:0 0 24px;}
@@ -422,6 +441,9 @@ footer{background:#fff;padding:clamp(40px,5vw,60px) 0;border-top:1px solid rgba(
   .nav-links,.nav-right{display:none;}
   .nav-burger{display:flex;}
   .hero-grid{grid-template-columns:1fr;padding-bottom:56px;}
+  /* Com 1 coluna a reserva de espaco para a arte vira so um vazio no topo:
+     a bg mobile e abstrata, nao tem sujeito para preservar. */
+  .hero-art{display:none;}
   .stats-bar{grid-template-columns:repeat(2,1fr);transform:translateY(-26px);row-gap:6px;}
   .price-grid{grid-template-columns:1fr;}
   .price-cards{flex-direction:column;}
@@ -436,7 +458,9 @@ footer{background:#fff;padding:clamp(40px,5vw,60px) 0;border-top:1px solid rgba(
      Scrim vira simétrico — o .hero-grid já colapsou para 1 coluna em 980px. */
   .hero::before{background-image:url('assets/hero-mobile.webp');background-position:center top;}
   .hero-glow{background:linear-gradient(180deg,rgba(20,13,51,.62) 0%,rgba(20,13,51,.88) 100%);}
-  .hero h1{font-size:40px;}
+  /* "Human + IA" tem 10 caracteres — cabe bem maior que o headline longo antigo */
+  .hero h1{font-size:clamp(44px,13vw,60px);}
+  .hero-art{min-height:200px;}
   h2.sec{font-size:28px;}
   .split.rev{direction:ltr;}
   .diamond-wrap{display:none;}
@@ -450,7 +474,7 @@ footer{background:#fff;padding:clamp(40px,5vw,60px) 0;border-top:1px solid rgba(
   .group-banner{flex-direction:column;align-items:flex-start;}
 }
 @media(max-width:480px){
-  .hero h1{font-size:32px;}
+  .hero h1{font-size:clamp(40px,12vw,52px);}
   .sb-v{font-size:25px;}
   .stats-bar{padding:18px 12px;}
   .spk-card-feat .ph{height:230px;}
@@ -477,7 +501,9 @@ footer{background:#fff;padding:clamp(40px,5vw,60px) 0;border-top:1px solid rgba(
       <a href="#seja-patrocinador">Patrocínio</a>
       <a href="#venue">Local</a>
     </div>
-    <div class="nav-right" style="display:flex;align-items:center;gap:16px;">
+    <!-- sem display inline: ele vencia a media query de 980px e mantinha este
+         bloco visivel no mobile, sobrepondo o logo do PMI. A classe ja estiliza. -->
+    <div class="nav-right" style="gap:16px;">
       <span style="color:#fff;font-weight:700;font-size:13.5px;white-space:nowrap;opacity:.92;">13–14 nov 2026</span>
       <a href="https://www.sympla.com.br/evento/pmi-rs-summit-2026/3398919" target="_blank" class="btn btn-v btn-sm">Inscreva-se</a>
     </div>
@@ -503,15 +529,16 @@ footer{background:#fff;padding:clamp(40px,5vw,60px) 0;border-top:1px solid rgba(
   <div class="hero-glow"></div>
   <div class="container">
     <div class="hero-grid">
-      <div>
+      <!-- Coluna vazia: espaco reservado para a arte da marca respirar -->
+      <div class="hero-art" aria-hidden="true"></div>
+      <div class="hero-col">
+      <div class="hero-copy">
         <h1>
-          <span class="hw" style="animation-delay:.04s">Desenvolvendo</span>
-          <span class="hw hw-teal" style="animation-delay:.16s"> Pessoas</span><br>
-          <span class="hw" style="animation-delay:.28s">para um</span>
-          <span class="hw" style="animation-delay:.38s"> mundo</span><br>
-          <span class="hw hw-und" style="animation-delay:.48s">em Transformação</span>
+          <span class="hw" style="animation-delay:.04s">Human</span>
+          <span class="hw plus" style="animation-delay:.18s"> +</span>
+          <span class="hw" style="animation-delay:.30s"> IA</span>
         </h1>
-        <p class="hero-support" style="animation:wordUp .55s .8s cubic-bezier(.22,1,.36,1) forwards;">O futuro começa com os passos de hoje.</p>
+        <p class="hero-tagline">Desenvolvendo pessoas para um mundo em transformação</p>
       </div>
       <div class="hero-card">
         <h2>PMIRS Summit<br>2026</h2>
@@ -527,6 +554,7 @@ footer{background:#fff;padding:clamp(40px,5vw,60px) 0;border-top:1px solid rgba(
           <div class="cd"><div class="n" id="cd-m">--</div><div class="l">Min</div></div>
           <div class="cd"><div class="n" id="cd-s">--</div><div class="l">Seg</div></div>
         </div>
+      </div>
       </div>
     </div>
   </div>
@@ -628,23 +656,26 @@ footer{background:#fff;padding:clamp(40px,5vw,60px) 0;border-top:1px solid rgba(
       <div class="spk-card-feat" data-reveal>
         <img src="assets/gino-terentim.webp" alt="Gino Terentim" class="ph" loading="lazy">
         <div class="si">
-          <h3>Gino Terentim</h3>
+          <h3>Gino Terentim<a href="https://www.linkedin.com/in/ginoterentim/" target="_blank" rel="noopener" class="li-badge" aria-label="LinkedIn de Gino Terentim"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a></h3>
           <p class="ro">Doutor · Université de Bordeaux &nbsp;|&nbsp; Trainer Dale Carnegie &nbsp;|&nbsp; Palestrante TEDx</p>
           <p class="bi">MBA em Gerenciamento de Projetos pela ESALQ/USP e MBE pela FEA/USP. Referência nacional em transformação organizacional, liderança e desenvolvimento humano. Combina rigor intelectual com autenticidade para criar workshops que desenvolvem pessoas e impulsionam equipes de alta performance.</p>
           <p class="bi" style="margin-top:8px;color:#a87bf0;font-weight:600;">Certificações em Portfólios, Programas, Projetos, Change Management, Lean e Agile.</p>
         </div>
       </div>
-      <div class="spk-card-feat" data-reveal style="background:#1a1040;">
-        <div style="display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.04);height:100%;">
+      <!-- TODO: adicionar foto de Gart Capote e trocar este bloco do avatar por
+           <img src="assets/gart-capote.webp" alt="Gart Capote" class="ph" loading="lazy"> -->
+      <div class="spk-card-feat" data-reveal>
+        <div style="display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.05);height:100%;">
           <svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="45" cy="32" r="20" fill="rgba(255,255,255,.1)"/>
-            <path d="M10 88c0-19.33 15.67-35 35-35s35 15.67 35 35" fill="rgba(255,255,255,.1)"/>
+            <circle cx="45" cy="32" r="20" fill="rgba(255,255,255,.14)"/>
+            <path d="M10 88c0-19.33 15.67-35 35-35s35 15.67 35 35" fill="rgba(255,255,255,.14)"/>
           </svg>
         </div>
-        <div class="si" style="justify-content:center;">
-          <h3 style="color:rgba(255,255,255,.35);">Em breve</h3>
-          <p class="ro" style="color:rgba(111,230,184,.4);">A ser confirmado</p>
-          <p class="bi" style="color:rgba(255,255,255,.25);">Siga o PMIRS no LinkedIn para ser o primeiro a saber quem é o próximo instrutor confirmado.</p>
+        <div class="si">
+          <h3>Gart Capote<a href="https://www.linkedin.com/in/gartcapote/" target="_blank" rel="noopener" class="li-badge" aria-label="LinkedIn de Gart Capote"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a></h3>
+          <p class="ro">Workshop &nbsp;|&nbsp; BPM e Gestão por Processos</p>
+          <p class="bi">Autoridade brasileira em BPM (Business Process Management) e criador do conceito de <b>Nexialismo Organizacional</b>. Autor de livros sobre gestão por processos, atua como consultor, palestrante e instrutor na disciplina.</p>
+          <p class="bi" style="margin-top:8px;color:#a87bf0;font-weight:600;">Processos, pessoas e estratégia conectados na prática.</p>
         </div>
       </div>
     </div>
@@ -652,7 +683,7 @@ footer{background:#fff;padding:clamp(40px,5vw,60px) 0;border-top:1px solid rgba(
 </section>
 
 <!-- ── PRICING WORKSHOPS (DIA 13) ── -->
-<section class="pad" id="lotes-workshops" style="background:linear-gradient(180deg,#e8f4ee,#f3faf6);">
+<section class="pad" id="lotes-workshops" style="background:linear-gradient(180deg,#f5eefb,#fbf7fe);">
   <div class="container">
     <div style="text-align:center;margin-bottom:clamp(28px,4vw,44px);">
       <p class="eyebrow" style="color:#E05B17;">Ingressos</p>
@@ -878,11 +909,15 @@ footer{background:#fff;padding:clamp(40px,5vw,60px) 0;border-top:1px solid rgba(
       <p style="color:#cdc5e8;font-size:17px;line-height:1.55;margin:0 auto 46px;max-width:560px;">Competências humanas e inteligência artificial como aliada, ideias e histórias reais para ampliar seu impacto na gestão de projetos.</p>
     </div>
     <div class="key-grid" style="max-width:1100px;margin:0 auto;">
-      <div class="key-tba" data-reveal>
-        <div class="circ-ph"></div>
-        <h3>Em breve</h3>
-        <p style="color:#FF9A5C;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin:0 0 10px;">A ser confirmado</p>
-        <p>Siga o PMIRS no <a href="https://www.linkedin.com/company/PMIRS" target="_blank">LinkedIn</a> para ser o primeiro a saber quem é o próximo palestrante confirmado.</p>
+      <!-- TODO: adicionar foto de Gart Capote em assets/ e trocar por:
+           <img src="assets/gart-capote.webp" alt="Gart Capote" class="ph" loading="lazy">
+           <div class="vl"></div>   (antes do div.ki) -->
+      <div class="key-card" data-reveal>
+        <div class="ki">
+          <h3>Gart Capote<a href="https://www.linkedin.com/in/gartcapote/" target="_blank" rel="noopener" class="li-badge" aria-label="LinkedIn de Gart Capote"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a></h3>
+          <p class="kr">Keynote &nbsp;|&nbsp; Autoridade em BPM no Brasil</p>
+          <p class="kb">Criador do conceito de <b>Nexialismo Organizacional</b>, autor de livros sobre gestão por processos e referência nacional em BPM. Atua como consultor, palestrante e instrutor, conectando processos, pessoas e estratégia.</p>
+        </div>
       </div>
       <div class="key-tba" data-reveal>
         <div class="circ-ph"></div>
@@ -910,7 +945,7 @@ footer{background:#fff;padding:clamp(40px,5vw,60px) 0;border-top:1px solid rgba(
       <div class="circ"><img src="assets/gino-terentim.webp" alt="Gino Terentim" loading="lazy"></div>
       <div>
         <p class="eyebrow">Destaque de Keynote</p>
-        <h2 class="sec">Gino Terentim</h2>
+        <h2 class="sec">Gino Terentim<a href="https://www.linkedin.com/in/ginoterentim/" target="_blank" rel="noopener" class="li-badge on-light" aria-label="LinkedIn de Gino Terentim"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a></h2>
         <p style="font-size:17px;font-weight:600;line-height:1.5;margin-top:12px;">Doutor · Université de Bordeaux · Trainer Dale Carnegie · Palestrante TEDx</p>
         <p class="desc">MBA em Gerenciamento de Projetos pela ESALQ/USP e MBE pela FEA/USP. Referência nacional em transformação organizacional, liderança e desenvolvimento humano. Combina rigor intelectual com autenticidade para criar workshops que desenvolvem pessoas e impulsionam equipes de alta performance.</p>
         <p class="desc" style="margin-top:12px;">Certificações em Portfólios, Programas, Projetos, Change Management, Lean e Agile.</p>
