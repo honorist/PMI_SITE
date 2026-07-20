@@ -18,9 +18,24 @@
 <link rel="canonical" href="https://honorist.github.io/PMI_SITE/">
 <link rel="icon" href="assets/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<!-- preload condicional: sem o media, o mobile baixaria o hero desktop a toa -->
-<link rel="preload" as="image" href="assets/hero-summit.webp" media="(min-width:681px)" fetchpriority="high">
 <link rel="preload" as="image" href="assets/hero-mobile.webp" media="(max-width:680px)" fetchpriority="high">
+<script>
+/* Sorteia a foto do hero a cada carregamento (bg 06 x bg 05).
+   Sincrono e no <head> de proposito: roda antes da primeira pintura, entao
+   nao ha troca visivel de imagem. O preload e injetado aqui, e nao no HTML
+   estatico, porque um preload fixo baixaria uma imagem e exibiria a outra. */
+(function () {
+  var variant = Math.random() < 0.5 ? 'a' : 'b';
+  document.documentElement.setAttribute('data-hero', variant);
+  // so faz sentido no desktop: abaixo de 681px o hero usa a bg vertical
+  if (window.matchMedia && window.matchMedia('(min-width:681px)').matches) {
+    var l = document.createElement('link');
+    l.rel = 'preload'; l.as = 'image'; l.fetchPriority = 'high';
+    l.href = variant === 'b' ? 'assets/hero-summit-b.webp' : 'assets/hero-summit.webp';
+    document.head.appendChild(l);
+  }
+})();
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -137,6 +152,12 @@ nav.top.scrolled{box-shadow:0 4px 30px rgba(20,13,51,.55);}
 .hero{position:relative;background:var(--hero-grad);padding:clamp(56px,8vw,104px) 0 0;overflow:hidden;}.stats-outer{position:relative;z-index:4;}
 /* Foto oficial da marca. O gradiente acima permanece como paint-before-decode. */
 .hero::before{content:'';position:absolute;inset:0;z-index:0;background-image:image-set(url('assets/hero-summit.webp') type('image/webp'),url('assets/hero-summit.jpg') type('image/jpeg'));background-position:center;background-size:cover;}
+/* Variante B do hero, sorteada a cada carregamento pelo script no <head>.
+   Escopada em min-width:681px de proposito: sem isso, a especificidade maior
+   de html[data-hero] venceria a regra mobile e o celular baixaria a bg desktop. */
+@media(min-width:681px){
+  html[data-hero="b"] .hero::before{background-image:image-set(url('assets/hero-summit-b.webp') type('image/webp'),url('assets/hero-summit-b.jpg') type('image/jpeg'));}
+}
 /* Manual da marca: a arte é protagonista, não textura de fundo. Sem véu por cima
    dela — o texto vive no espaço negativo à DIREITA, que já é roxo escuro na foto.
    Só um reforço suave à direita (para o texto) e na base (a .stats-bar sobe -50%
