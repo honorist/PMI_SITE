@@ -388,8 +388,14 @@ p.desc{color:var(--muted);font-size:17px;line-height:1.6;margin:18px 0 0;}
 .spon-tile{height:64px;min-width:150px;padding:0 22px;background:#f4f1f9;border:1px solid #ede8f7;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:15px;color:#8a80a8;transition:border-color .15s,background .15s;}
 .spon-tile:hover{border-color:#c4b6f0;background:#ede8f7;}
 .spon-tier.diamante .spon-tile{height:78px;min-width:180px;font-size:17px;}
-.spon-tier.realizacao .spon-tile{background:#fff;border-color:#ede8f7;}
-.spon-tier.realizacao .spon-tile img{height:52px;width:auto;}
+/* Realizacao: o PMI-RS e quem assina o evento, entao ganha destaque
+   maior que as cotas de patrocinio. */
+.spon-tier.realizacao .spon-tile{background:#fff;border-color:#ede8f7;height:132px;min-width:300px;padding:0 40px;}
+.spon-tier.realizacao .spon-tile img{height:92px;width:auto;max-width:100%;}
+@media(max-width:680px){
+  .spon-tier.realizacao .spon-tile{height:104px;min-width:0;padding:0 24px;}
+  .spon-tier.realizacao .spon-tile img{height:68px;}
+}
 
 /* ── FAQ ── */
 .faq-box{max-width:920px;margin:36px auto 0;background:var(--cream);border-radius:var(--rad);overflow:hidden;}
