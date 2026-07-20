@@ -97,6 +97,11 @@ img{display:block;max-width:100%;}
 .btn-v{background:linear-gradient(120deg,#8b3fe8,#6d28d9);color:#fff;box-shadow:0 6px 20px rgba(124,58,237,.4);}
 .btn-v:hover{filter:brightness(1.08);}
 .btn-w{background:#fff;color:var(--accent-p);}
+/* Botao laranja com glow — o CTA principal do material de referencia.
+   O preenchimento e mais fundo que o #FC6226 da marca porque branco sobre
+   #FC6226 da 3.4:1 e reprova AA. O glow guarda a cor viva. */
+.btn-o{background:linear-gradient(120deg,#C2410C,#9A3412);color:#fff;box-shadow:0 10px 30px rgba(252,98,38,.45);}
+.btn-o:hover{background:linear-gradient(120deg,#D2540F,#B03C0A);box-shadow:0 14px 40px rgba(252,98,38,.62);transform:translateY(-1px);}
 .btn-w:hover{background:#f0eaff;}
 .btn-ov{background:transparent;color:var(--accent);border:1.5px solid var(--accent);}
 .btn-ov:hover{background:var(--accent);color:#fff;}
@@ -239,7 +244,8 @@ p.desc{color:var(--muted);font-size:17px;line-height:1.6;margin:18px 0 0;}
 .price-grid{display:grid;grid-template-columns:minmax(0,720px) minmax(0,1fr);gap:clamp(40px,5vw,80px);align-items:center;}
 .price-stack{position:relative;}
 .price-cards{display:flex;align-items:flex-start;margin-bottom:26px;}
-.price-main{flex:0 0 340px;position:relative;z-index:2;background:linear-gradient(160deg,#6a2fb8,#4a1d8a 60%,#3a1d8c);border-radius:var(--rad);padding:34px 32px;box-shadow:0 28px 70px rgba(74,29,138,.5);}
+/* Card de lancamento: gradiente vivido violeta -> magenta -> laranja */
+.price-main{flex:0 0 340px;position:relative;z-index:2;background:linear-gradient(155deg,#7C3AED 0%,#5b2bc7 34%,#C026A8 72%,#FC6226 100%);border-radius:26px;padding:34px 32px;box-shadow:0 28px 70px rgba(124,58,237,.45);}
 .price-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(224,91,23,.20);color:#FF9A5C;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:99px;margin:0 0 6px;}
 .price-sub{color:rgba(255,255,255,.55);font-size:13px;margin:0 0 22px;line-height:1.4;}
 .pcat{color:#cdbff0;font-size:12px;font-weight:700;letter-spacing:.08em;margin:0 0 6px;}
@@ -277,12 +283,16 @@ p.desc{color:var(--muted);font-size:17px;line-height:1.6;margin:18px 0 0;}
 
 /* ── MAKECASE ── */
 .mc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:clamp(28px,3vw,44px);align-items:start;}
-.mc-card{background:linear-gradient(165deg,#241a52,#E05B17);border-radius:var(--rad);padding:clamp(28px,3vw,40px);}
+/* Gradiente vivido de 3 paradas (violeta -> magenta -> laranja), como no material.
+   O de 2 paradas anterior passava por marrom no meio e ficava lavado. */
+.mc-card{background:linear-gradient(135deg,#4c1d95 0%,#7C3AED 26%,#A81E8F 58%,#C2410C 100%);border-radius:28px;padding:clamp(28px,3vw,40px);box-shadow:0 30px 70px rgba(124,58,237,.32);}
 .mc-card .ey{color:#FF9A5C;font-size:13px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;margin:0 0 10px;}
 .mc-card h2{color:#fff;font-size:clamp(26px,3vw,34px);margin:0;}
-.mc-card p{color:#d6cef0;font-size:15.5px;line-height:1.6;margin:14px 0 0;}
-.mc-stats{display:grid;grid-template-columns:repeat(3,1fr);border-radius:var(--rad);overflow:hidden;}
-.mc-stat{padding:24px 18px 22px;}
+/* branco puro: o lilas #d6cef0 dava 2.7:1 sobre a ponta magenta do gradiente */
+.mc-card p{color:#fff;font-size:15.5px;line-height:1.6;margin:14px 0 0;}
+/* Tiles separados com cantos proprios, em vez de uma barra unica colada */
+.mc-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px;}
+.mc-stat{padding:26px 22px 24px;border-radius:20px;box-shadow:0 16px 40px rgba(20,13,51,.28);}
 .mc-stat .v{color:#fff;font-size:clamp(34px,4vw,50px);font-weight:800;letter-spacing:-.02em;line-height:1;}
 .mc-stat .d{color:rgba(255,255,255,.92);font-size:13px;font-weight:500;line-height:1.4;margin-top:10px;}
 .mc-photos{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px;}
@@ -431,7 +441,7 @@ footer{background:#fff;padding:clamp(40px,5vw,60px) 0;border-top:1px solid rgba(
 .fb-mark .fms{display:inline-flex;align-items:center;gap:3px;}
 .fms span{width:9px;height:20px;background:#6d28d9;border-radius:9px 0 0 9px;display:block;}
 .fms span.r{border-radius:0 9px 9px 0;margin-left:-2px;}
-.fms .fc1{width:20px;height:20px;border-radius:50%;background:linear-gradient(90deg,#E05B17 50%,#2f6fb3 50%);margin-left:4px;}
+.fms .fc1{width:20px;height:20px;border-radius:50%;background:linear-gradient(90deg,#E05B17 50%,#7C3AED 50%);margin-left:4px;}
 .fms .fc2{width:20px;height:20px;border-radius:50%;background:#1a1230;margin-left:3px;}
 .fb-txt{color:#1a1230;font-weight:600;font-size:11.5px;line-height:1.12;}
 .foot-soc{display:flex;gap:10px;margin-top:8px;}
@@ -848,7 +858,7 @@ footer{background:#fff;padding:clamp(40px,5vw,60px) 0;border-top:1px solid rgba(
             <div class="pstrike"><s>R$ 640</s><span class="pbadge">60% OFF</span></div>
             <div class="pamt">R$ 259 <small>BRL</small></div>
             <p class="price-sub" style="margin-top:18px;">Vagas limitadas. Após 14/07 entra em vigor o Lote 1.</p>
-            <a href="https://www.sympla.com.br/evento/pmi-rs-summit-2026-lote-blind-venda-as-cegas-14-11/3503520?share_id=copiarlink" target="_blank" class="btn btn-w" style="display:block;text-align:center;margin-top:24px;">Garantir meu ingresso</a>
+            <a href="https://www.sympla.com.br/evento/pmi-rs-summit-2026-lote-blind-venda-as-cegas-14-11/3503520?share_id=copiarlink" target="_blank" class="btn btn-o" style="display:block;text-align:center;margin-top:24px;">Garantir meu ingresso</a>
           </div>
           <div class="price-bg">
             <p class="pnext">Próximo lote · Palestras · 15/07 a 11/08</p>
@@ -866,7 +876,7 @@ footer{background:#fff;padding:clamp(40px,5vw,60px) 0;border-top:1px solid rgba(
         <div class="group-banner">
           <span>Grupo de 5 ou mais? Desconto especial!</span>
           <div style="display:flex;gap:10px;flex-wrap:wrap;">
-            <a href="mailto:vendas.summit@pmirs.org.br" class="btn btn-w btn-sm">Falar com equipe</a>
+            <a href="mailto:vendas.summit@pmirs.org.br" class="btn btn-o btn-sm">Falar com equipe</a>
           </div>
         </div>
       </div>
@@ -884,7 +894,9 @@ footer{background:#fff;padding:clamp(40px,5vw,60px) 0;border-top:1px solid rgba(
 <section id="seja-patrocinador" style="padding:clamp(40px,6vw,90px) 0 clamp(60px,8vw,110px);">
   <div class="container">
     <div class="mc-card" data-reveal style="text-align:center;padding:clamp(32px,4vw,56px);">
-      <p class="mc-card ey">Seja Patrocinador</p>
+      <!-- era class="mc-card ey": o paragrafo herdava o cartao inteiro (gradiente,
+           padding, raio) e desenhava um retangulo fantasma atras do texto -->
+      <p class="ey">Seja Patrocinador</p>
       <h2 class="sec" style="color:#fff;margin:12px auto 0;max-width:820px;font-size:clamp(28px,3.6vw,44px);">Coloque sua marca na frente de quem decide</h2>
       <p style="max-width:720px;margin:18px auto 0;">As organizações que ganham agora não esperam condições perfeitas, elas constroem equipes que se transformam. Patrocinar o PMIRS Summit 2026 é um investimento direto nos profissionais que lideram o que vem a seguir.</p>
       <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:32px;">
@@ -893,9 +905,10 @@ footer{background:#fff;padding:clamp(40px,5vw,60px) 0;border-top:1px solid rgba(
       </div>
     </div>
     <div class="mc-stats" style="margin-top:clamp(18px,2.5vw,28px);">
-      <div class="mc-stat" style="background:#6a2fb8;"><div class="v">500+</div><div class="d">profissionais de Gerente de Projetos do RS em um único dia</div></div>
-      <div class="mc-stat" style="background:#E05B17;"><div class="v">80%</div><div class="d">dos participantes influenciam decisões de compra</div></div>
-      <div class="mc-stat" style="background:#2f63b4;"><div class="v">4x</div><div class="d">mais engajamento vs. patrocínio só digital</div></div>
+      <div class="mc-stat" style="background:linear-gradient(150deg,#7C3AED,#4c1d95);"><div class="v">500+</div><div class="d">profissionais de Gerente de Projetos do RS em um único dia</div></div>
+      <div class="mc-stat" style="background:linear-gradient(150deg,#D2540F,#8A3009);"><div class="v">80%</div><div class="d">dos participantes influenciam decisões de compra</div></div>
+      <!-- era #2f63b4: azul nao existe na marca, resíduo da paleta antiga -->
+      <div class="mc-stat" style="background:linear-gradient(150deg,#C026A8,#7C1D6F);"><div class="v">4x</div><div class="d">mais engajamento vs. patrocínio só digital</div></div>
     </div>
   </div>
 </section>
@@ -956,17 +969,13 @@ footer{background:#fff;padding:clamp(40px,5vw,60px) 0;border-top:1px solid rgba(
 <section class="spot" style="background:var(--cream);">
   <div class="container">
     <div class="split rev" data-reveal>
-      <div class="circ" style="display:flex;align-items:center;justify-content:center;background:#e9e3f5;">
-        <svg width="150" height="150" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="45" cy="32" r="20" fill="rgba(124,58,237,.18)"/>
-          <path d="M10 88c0-19.33 15.67-35 35-35s35 15.67 35 35" fill="rgba(124,58,237,.18)"/>
-        </svg>
-      </div>
+      <div class="circ"><img src="assets/gart-capote.webp" alt="Gart Capote" loading="lazy"></div>
       <div>
         <p class="eyebrow">Destaque de Keynote</p>
-        <h2 class="sec">Em breve</h2>
-        <p style="font-size:17px;font-weight:600;line-height:1.5;margin-top:12px;color:var(--accent);">A ser confirmado</p>
-        <p class="desc">Siga o PMIRS no <a href="https://www.linkedin.com/company/PMIRS" target="_blank" style="color:var(--accent);font-weight:600;">LinkedIn</a> para ser o primeiro a saber quem é o próximo palestrante confirmado.</p>
+        <h2 class="sec">Gart Capote<a href="https://www.linkedin.com/in/gartcapote/" target="_blank" rel="noopener" class="li-badge on-light" aria-label="LinkedIn de Gart Capote"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a></h2>
+        <p style="font-size:17px;font-weight:600;line-height:1.5;margin-top:12px;">Autoridade em BPM no Brasil · Criador do Nexialismo Organizacional</p>
+        <p class="desc">Referência nacional em gestão por processos e autor de livros sobre BPM. Atua como consultor, palestrante e instrutor, conectando processos, pessoas e estratégia para transformar a forma como as organizações entregam valor.</p>
+        <p class="desc" style="margin-top:12px;">No Summit 2026, Gart participa como <b>keynote</b> e conduz um <b>workshop</b> no dia 13.</p>
       </div>
     </div>
   </div>
