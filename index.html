@@ -1257,6 +1257,20 @@ burger.addEventListener('click', function(){
 });
 window.closeMob = function(){ mob.classList.remove('open'); burger.setAttribute('aria-expanded','false'); };
 
+// embaralha os cards de palestrantes a cada carregamento ("Em breve" fica por último)
+(function(){
+  var grid = document.querySelector('.key-grid');
+  if(!grid) return;
+  var cards = Array.prototype.slice.call(grid.querySelectorAll('.key-card'));
+  for(var i = cards.length - 1; i > 0; i--){
+    var j = Math.floor(Math.random() * (i + 1));
+    var t = cards[i]; cards[i] = cards[j]; cards[j] = t;
+  }
+  cards.forEach(function(c){ grid.appendChild(c); });
+  var tba = grid.querySelector('.key-tba');
+  if(tba) grid.appendChild(tba);
+})();
+
 // reveal
 if('IntersectionObserver' in window){
   var io = new IntersectionObserver(function(es){
