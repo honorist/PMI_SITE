@@ -1315,6 +1315,92 @@ window.stab = function(i){
   }
   setInterval(slide, 4000);
 })();
+
+/* ── PALESTRANTES CONFIRMADOS (puxa do app de gestão em tempo real) ──
+   Híbrido: mantém os cards curados à mão e ACRESCENTA os confirmados
+   vindos do app que ainda não estão na página (dedupe por nome).
+   Falha em silêncio se o app estiver fora — o site nunca quebra. */
+(function(){
+  var API = 'https://summit-2026.up.railway.app/api/palestrantes/publico';
+  var LI_PATH = 'M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z';
+
+  function norm(s){ return (s||'').toString().trim().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,''); }
+  function iniciais(nome){
+    var p = (nome||'').trim().split(/\s+/);
+    return ((p[0]?p[0][0]:'') + (p.length>1?p[p.length-1][0]:'')).toUpperCase();
+  }
+  function liBadge(nome, url){
+    if(!url || !/^https?:\/\//i.test(url)) return null;
+    var a = document.createElement('a');
+    a.href = url; a.target = '_blank'; a.rel = 'noopener';
+    a.className = 'li-badge'; a.setAttribute('aria-label', 'LinkedIn de ' + nome);
+    var svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+    svg.setAttribute('viewBox','0 0 24 24');
+    var path = document.createElementNS('http://www.w3.org/2000/svg','path');
+    path.setAttribute('d', LI_PATH); svg.appendChild(path); a.appendChild(svg);
+    return a;
+  }
+  function buildCard(sp){
+    var card = document.createElement('div'); card.className = 'key-card';
+    var hasFoto = sp.foto && /^(data:image|https?:|assets\/)/i.test(sp.foto);
+    if(!hasFoto) card.setAttribute('style','background:linear-gradient(180deg,#2a1560,#1a0f3d);');
+    if(hasFoto){
+      var img = document.createElement('img');
+      img.src = sp.foto; img.alt = sp.nome; img.className = 'ph'; img.loading = 'lazy';
+      img.setAttribute('style','object-position:center 30%;');
+      card.appendChild(img);
+      var vl = document.createElement('div'); vl.className = 'vl'; card.appendChild(vl);
+    }
+    var ki = document.createElement('div'); ki.className = 'ki';
+    if(!hasFoto){
+      var circ = document.createElement('div'); circ.className = 'circ-ph';
+      circ.setAttribute('style','width:88px;height:88px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:24px;color:#a87bf0;margin-bottom:18px;');
+      circ.textContent = iniciais(sp.nome); ki.appendChild(circ);
+    }
+    var h3 = document.createElement('h3');
+    h3.appendChild(document.createTextNode(sp.nome));
+    var badge = liBadge(sp.nome, sp.linkedin); if(badge) h3.appendChild(badge);
+    ki.appendChild(h3);
+    var kr = document.createElement('p'); kr.className = 'kr';
+    var cargoLinha = [sp.cargo, sp.empresa].filter(Boolean).join(' · ');
+    kr.textContent = 'Palestrante' + (cargoLinha ? ' | ' + cargoLinha : '');
+    ki.appendChild(kr);
+    var kb = document.createElement('p'); kb.className = 'kb';
+    var bio = sp.bioPublica && sp.bioPublica.trim();
+    if(!bio){
+      var partes = [];
+      if(sp.area) partes.push(sp.area);
+      if(sp.temasProposto && sp.temasProposto.length) partes.push('Temas: ' + sp.temasProposto.join(', '));
+      bio = partes.join(' · ') || 'Palestrante confirmado no PMIRS Summit 2026.';
+    }
+    kb.textContent = bio; ki.appendChild(kb);
+    card.appendChild(ki);
+    return card;
+  }
+
+  try {
+    fetch(API, { mode: 'cors' })
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(out){
+        if(!out || !Array.isArray(out.palestrantes)) return;
+        var grid = document.querySelector('.key-grid');
+        if(!grid) return;
+        var existentes = {};
+        document.querySelectorAll('.key-card h3, .spk-card-feat h3').forEach(function(h){
+          existentes[norm(h.textContent)] = true;
+        });
+        var tba = grid.querySelector('.key-tba');
+        out.palestrantes.forEach(function(sp){
+          if(!sp || !sp.nome || existentes[norm(sp.nome)]) return;
+          existentes[norm(sp.nome)] = true;
+          var card = buildCard(sp);
+          if(tba) grid.insertBefore(card, tba); else grid.appendChild(card);
+          card.style.opacity = '1'; card.style.transform = 'none';
+        });
+      })
+      .catch(function(){ /* app offline: mantém cards estáticos */ });
+  } catch(e){ /* noop */ }
+})();
 </script>
 </body>
 </html>
