@@ -1408,6 +1408,137 @@ window.stab = function(i){
       .catch(function(){ /* app offline: mantém cards estáticos */ });
   } catch(e){ /* noop */ }
 })();
+
+/* ── PROGRAMAÇÃO / PALCOS (espelha a aba "Palestrantes" do app de gestão) ──
+   As abas e as linhas de sessão são remontadas a partir do app: mudou o
+   palestrante, o horário ou o palco lá, muda aqui — sem retrabalho.
+   O HTML estático acima é o fallback: se o app estiver fora, nada muda. */
+(function(){
+  var API  = 'https://summit-2026.up.railway.app/api/programacao/publico';
+  var DIA  = '14 nov 2026';
+  var DESC = 'Escolha o palco e acompanhe a programação. Os temas e palestrantes serão divulgados em breve.';
+
+  // Moldura fixa do evento — não vive no app de gestão, é sempre a mesma.
+  // `soPrincipal` = nos demais palcos a linha vira um traço, para as abas
+  // ficarem alinhadas no começo e no fim do dia.
+  var MOLDURA = [
+    { horario: '07h30 - 08h00', titulo: 'Credenciamento',   soPrincipal: true },
+    { horario: '08h00 - 08h30', titulo: 'Abertura oficial', soPrincipal: true },
+    { horario: '09h30 - 10h00', titulo: 'Coffee break' },
+    { horario: '12h00 - 13h30', titulo: 'Almoço' },
+    { horario: '15h30 - 16h00', titulo: 'Coffee break' },
+    { horario: '18h00 - 18h30', titulo: 'Encerramento',     soPrincipal: true }
+  ];
+
+  // "HHhMM - HHhMM" → minuto de início (para ordenar). Sem parse: vai pro fim.
+  function inicioEmMin(horario){
+    var m = /^\s*(\d{1,2})h(\d{2})/.exec(horario || '');
+    if(!m) return 1e9;
+    return parseInt(m[1],10) * 60 + parseInt(m[2],10);
+  }
+
+  function linhasDoPalco(palco, idx){
+    var itens = [];
+    MOLDURA.forEach(function(m){
+      itens.push({ horario: m.horario, titulo: m.titulo, mudo: !!(m.soPrincipal && idx > 0) });
+    });
+    (palco.sessoes || []).forEach(function(s){
+      if(!s || !s.horario) return;
+      itens.push(s);
+    });
+    // Ordena por horário mantendo a ordem original em caso de empate.
+    return itens
+      .map(function(it, i){ return { it: it, min: inicioEmMin(it.horario), i: i }; })
+      .sort(function(a, b){ return (a.min - b.min) || (a.i - b.i); })
+      .map(function(o){ return o.it; });
+  }
+
+  function buildRow(item){
+    var row = document.createElement('div'); row.className = 'sess-row';
+    var t = document.createElement('span'); t.className = 't';
+    t.textContent = item.horario; row.appendChild(t);
+
+    var n = document.createElement('span'); n.className = 'n';
+    if(item.mudo){
+      n.setAttribute('style','color:var(--muted);');
+      n.appendChild(document.createTextNode('—'));
+      row.appendChild(n);
+      return row;
+    }
+    var destaque = item.tipo === 'keynote' || item.tipo === 'especial';
+    if(destaque){
+      var st = document.createElement('strong'); st.textContent = item.titulo || '';
+      n.appendChild(st);
+    } else {
+      n.appendChild(document.createTextNode(item.titulo || ''));
+    }
+    // Nome só chega aqui se a sessão estiver confirmada no app (o endpoint filtra).
+    if(item.palestrante){
+      var spk = document.createElement('span'); spk.className = 'spk';
+      spk.textContent = [item.palestrante, item.empresa].filter(Boolean).join(' · ');
+      n.appendChild(spk);
+    }
+    if(item.tema){
+      var tm = document.createElement('span'); tm.className = 'spk';
+      tm.textContent = item.tema; n.appendChild(tm);
+    }
+    row.appendChild(n);
+    return row;
+  }
+
+  function buildPanel(palco, idx, hlModelo){
+    var panel = document.createElement('div');
+    panel.className = 'tab-panel' + (idx === 0 ? ' active' : '');
+    panel.id = 'tp' + idx;
+    panel.setAttribute('role','tabpanel');
+
+    var col = document.createElement('div');
+    var ey = document.createElement('p'); ey.className = 'eyebrow';
+    ey.textContent = DIA + ' · ' + (palco.nome || 'Palco'); col.appendChild(ey);
+    var h2 = document.createElement('h2'); h2.className = 'sec';
+    h2.setAttribute('style','font-size:clamp(28px,3.4vw,40px);');
+    h2.textContent = 'Cronograma do evento'; col.appendChild(h2);
+    var desc = document.createElement('p'); desc.className = 'desc';
+    desc.textContent = DESC; col.appendChild(desc);
+
+    var list = document.createElement('div'); list.className = 'sess-list';
+    linhasDoPalco(palco, idx).forEach(function(it){ list.appendChild(buildRow(it)); });
+    col.appendChild(list);
+    panel.appendChild(col);
+
+    if(hlModelo) panel.appendChild(hlModelo.cloneNode(true));
+    return panel;
+  }
+
+  try {
+    fetch(API, { mode: 'cors' })
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(out){
+        if(!out || !Array.isArray(out.palcos) || !out.palcos.length) return;
+        var sec = document.getElementById('schedule');
+        var cont = sec && sec.querySelector('.container');
+        var tabRow = cont && cont.querySelector('.tab-row');
+        if(!tabRow) return;
+
+        // Guarda a coluna "Temas principais" antes de limpar os painéis.
+        var hlModelo = cont.querySelector('.tab-panel .hl-cards');
+        cont.querySelectorAll('.tab-panel').forEach(function(p){ p.parentNode.removeChild(p); });
+        tabRow.textContent = '';
+
+        out.palcos.forEach(function(palco, i){
+          var b = document.createElement('button');
+          b.className = 'tab-btn' + (i === 0 ? ' active' : '');
+          b.setAttribute('role','tab');
+          b.setAttribute('aria-selected', String(i === 0));
+          b.textContent = palco.nome || ('Palco ' + (i + 1));
+          b.addEventListener('click', function(){ window.stab(i); });
+          tabRow.appendChild(b);
+          cont.appendChild(buildPanel(palco, i, hlModelo));
+        });
+      })
+      .catch(function(){ /* app offline: mantém a grade estática */ });
+  } catch(e){ /* noop */ }
+})();
 </script>
 </body>
 </html>
