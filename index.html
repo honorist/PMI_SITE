@@ -439,6 +439,23 @@ p.desc{color:var(--muted);font-size:17px;line-height:1.6;margin:18px 0 0;}
 .qa .qa-ans{max-height:0;overflow:hidden;transition:max-height .28s ease;}
 .qa .qa-ans p{color:var(--muted);font-size:16px;line-height:1.6;max-width:760px;padding:0 clamp(20px,3vw,36px) 26px;margin:0;}
 
+/* ── EMENTA MODAL ── */
+.ementa-overlay{position:fixed;inset:0;z-index:200;background:rgba(20,13,51,.72);backdrop-filter:blur(3px);display:none;align-items:flex-start;justify-content:center;padding:clamp(16px,4vw,56px) 16px;overflow-y:auto;}
+.ementa-overlay.open{display:flex;}
+.ementa-box{position:relative;width:100%;max-width:760px;background:#fff;border-radius:var(--rad);padding:clamp(28px,4vw,48px);box-shadow:0 30px 80px rgba(20,13,51,.5);margin:auto 0;}
+.ementa-close{position:absolute;top:18px;right:18px;width:36px;height:36px;border-radius:50%;border:none;background:var(--cream);color:var(--ink);font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.ementa-close:hover{background:#e8e2d6;}
+.ementa-box .eyebrow{color:var(--teal);}
+.ementa-box h2{font-size:clamp(24px,3vw,32px);line-height:1.25;margin:6px 0 18px;color:var(--ink);}
+.ementa-box .em-lead{font-size:16px;line-height:1.6;color:var(--muted);margin:0 0 26px;}
+.ementa-box h4{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--violet);margin:26px 0 10px;}
+.ementa-box h4:first-of-type{margin-top:0;}
+.ementa-box ul{margin:0;padding:0;list-style:none;}
+.ementa-box li{font-size:15px;line-height:1.55;color:var(--ink);padding:10px 0;border-bottom:1px solid rgba(26,18,48,.08);}
+.ementa-box li:last-child{border-bottom:none;}
+.ementa-box li b{display:block;margin-bottom:3px;}
+.ementa-box .em-quote{margin-top:24px;padding:18px 20px;background:var(--cream);border-radius:var(--rad-sm);font-style:italic;font-size:15px;color:var(--ink);}
+
 /* ── FINAL CTA ── */
 .final-cta{position:relative;background:linear-gradient(120deg,#3a1d8c,#5b2bc7 50%,#3a1d8c);padding:clamp(56px,7vw,96px) 0;overflow:hidden;}
 /* bg 07: abstrata, sem rosto — o par de logos à esquerda não ocluí ninguém,
@@ -691,12 +708,17 @@ footer{background:#fff;padding:clamp(40px,5vw,60px) 0;border-top:1px solid rgba(
         <p>Aprenda na prática com quem transforma complexidade em clareza. O PMIRS Summit 2026 traz workshops imersivos no primeiro dia do evento. Vagas limitadas, inscrição incluída no ingresso.</p>
       </div>
       <div class="spk-card-feat" data-reveal>
-        <img src="assets/gino-terentim.webp" alt="Gino Terentim" class="ph" loading="lazy">
+        <img src="assets/gino-terentim.webp" alt="Gino Terentim" class="ph gino-photo" loading="lazy">
         <div class="si">
           <h3>Gino Terentim<a href="https://www.linkedin.com/in/ginoterentim/" target="_blank" rel="noopener" class="li-badge" aria-label="LinkedIn de Gino Terentim"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a></h3>
-          <p class="ro">Doutor · Université de Bordeaux &nbsp;|&nbsp; Trainer Dale Carnegie &nbsp;|&nbsp; Palestrante TEDx</p>
-          <p class="bi">MBA em Gerenciamento de Projetos pela ESALQ/USP e MBE pela FEA/USP. Referência nacional em transformação organizacional, liderança e desenvolvimento humano. Combina rigor intelectual com autenticidade para criar workshops que desenvolvem pessoas e impulsionam equipes de alta performance.</p>
-          <p class="bi" style="margin-top:8px;color:#a87bf0;font-weight:600;">Certificações em Portfólios, Programas, Projetos, Change Management, Lean e Agile.</p>
+          <p class="ro" data-gino="ro">Doutor em Administração · Université de Bordeaux &nbsp;|&nbsp; Harvard University Extension School &nbsp;|&nbsp; Fundador, Gino Terentim Academia</p>
+          <p class="bi" data-gino="p1">Dedica-se a reinventar a forma como aprendemos. Fundador da Gino Terentim Academia de Desenvolvimento Empresarial e idealizador do MBA em Gestão Estratégica de Valor, é doutor em Administração pela Université de Bordeaux, com MBA em Gerenciamento de Projetos pela ESALQ/USP e MBE em Economia Brasileira pela FEA/USP. Atualmente conclui o bacharelado em Extension Studies (Management) na Harvard University, onde também inicia o mestrado.</p>
+          <p class="bi" style="margin-top:8px;" data-gino="p2">Especialista em planejamento estratégico, gestão de mudanças, portfólios, programas e projetos, acumula mais de 60 certificações profissionais, entre elas PMP, PgMP, PfMP e CCMP. É empreendedor social, autor de três livros e coautor do PMBOK 7ª edição.</p>
+          <p class="bi" style="margin-top:8px;color:#a87bf0;font-weight:600;" data-gino="p3">Sua missão é transformar a educação em uma experiência extraordinária e acessível a todos.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:16px;">
+            <button type="button" class="btn btn-w" onclick="openEmenta()">Ementa do Workshop</button>
+            <a href="https://www.sympla.com.br/evento/pmi-rs-summit-2026-lote-blind-venda-as-cegas-14-11/3503520?share_id=copiarlink" target="_blank" rel="noopener" class="btn btn-v">Inscreva-se</a>
+          </div>
         </div>
       </div>
       <div class="spk-card-feat" data-reveal>
@@ -993,13 +1015,14 @@ footer{background:#fff;padding:clamp(40px,5vw,60px) 0;border-top:1px solid rgba(
 <section class="spot" style="background:#fff;">
   <div class="container">
     <div class="split" data-reveal>
-      <div class="circ"><img src="assets/gino-terentim.webp" alt="Gino Terentim" loading="lazy"></div>
+      <div class="circ"><img src="assets/gino-terentim.webp" alt="Gino Terentim" class="gino-photo" loading="lazy"></div>
       <div>
         <p class="eyebrow">Destaque de Keynote</p>
         <h2 class="sec">Gino Terentim<a href="https://www.linkedin.com/in/ginoterentim/" target="_blank" rel="noopener" class="li-badge on-light" aria-label="LinkedIn de Gino Terentim"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a></h2>
-        <p style="font-size:17px;font-weight:600;line-height:1.5;margin-top:12px;">Doutor · Université de Bordeaux · Trainer Dale Carnegie · Palestrante TEDx</p>
-        <p class="desc">MBA em Gerenciamento de Projetos pela ESALQ/USP e MBE pela FEA/USP. Referência nacional em transformação organizacional, liderança e desenvolvimento humano. Combina rigor intelectual com autenticidade para criar workshops que desenvolvem pessoas e impulsionam equipes de alta performance.</p>
-        <p class="desc" style="margin-top:12px;">Certificações em Portfólios, Programas, Projetos, Change Management, Lean e Agile.</p>
+        <p style="font-size:17px;font-weight:600;line-height:1.5;margin-top:12px;" data-gino="ro">Doutor em Administração · Université de Bordeaux · Harvard University Extension School</p>
+        <p class="desc" data-gino="p1">Dedica-se a reinventar a forma como aprendemos. Fundador da Gino Terentim Academia de Desenvolvimento Empresarial e idealizador do MBA em Gestão Estratégica de Valor, é doutor em Administração pela Université de Bordeaux, com MBA em Gerenciamento de Projetos pela ESALQ/USP e MBE em Economia Brasileira pela FEA/USP. Atualmente conclui o bacharelado em Extension Studies (Management) na Harvard University, onde também inicia o mestrado.</p>
+        <p class="desc" style="margin-top:12px;" data-gino="p2">Especialista em planejamento estratégico, gestão de mudanças, portfólios, programas e projetos, acumula mais de 60 certificações profissionais, entre elas PMP, PgMP, PfMP e CCMP. É empreendedor social, autor de três livros e coautor do PMBOK 7ª edição.</p>
+        <p class="desc" style="margin-top:12px;font-weight:600;" data-gino="p3">Sua missão é transformar a educação em uma experiência extraordinária e acessível a todos.</p>
       </div>
     </div>
   </div>
@@ -1218,6 +1241,38 @@ footer{background:#fff;padding:clamp(40px,5vw,60px) 0;border-top:1px solid rgba(
   </div>
 </footer>
 
+<!-- ── EMENTA DO WORKSHOP (Gino Terentim) ── -->
+<div class="ementa-overlay" id="ementa-modal" role="dialog" aria-modal="true" aria-labelledby="ementa-title" onclick="if(event.target===this) closeEmenta();">
+  <div class="ementa-box">
+    <button type="button" class="ementa-close" onclick="closeEmenta()" aria-label="Fechar">✕</button>
+    <p class="eyebrow">Briefing do programa · Workshop · 13 de novembro · 8 horas de imersão</p>
+    <h2 id="ementa-title">VMO e o Agente de Valor: a gestão que faz projetos gerarem valor.</h2>
+    <p class="em-lead">Um programa formativo imersivo e prático para consolidar uma visão integrada de valor. Fundamentos de gestão de valor, critérios de sucesso e métricas aplicadas, para quem precisa atuar na interseção entre estratégia, execução e resultados.</p>
+
+    <h4>O que é</h4>
+    <p class="em-lead" style="margin-bottom:0;">Entregar projetos é o meio, gerar valor percebido é o fim. O programa capacita equipes nos fundamentos de gestão de valor, em critérios de sucesso e na aplicação de métricas e indicadores — e constrói o papel do <b>Agente de Valor</b>, quem atua na interseção entre estratégia, execução e resultados. Os participantes trabalham o próprio contexto e saem com artefatos reais, não com anotações teóricas.</p>
+
+    <h4>Os dilemas que resolve</h4>
+    <ul>
+      <li><b>A armadilha do prazo-custo-escopo</b>Projetos são celebrados por entregar no prazo e no orçamento, mas ninguém consegue responder que valor geraram.</li>
+      <li><b>O valor invisível</b>O valor tangível entra na planilha, mas o intangível e o percebido ficam de fora do business case.</li>
+      <li><b>O portfólio por opinião</b>Iniciativas priorizadas por influência, urgência ou tradição, não por valor.</li>
+    </ul>
+
+    <h4>Objetivos de aprendizagem</h4>
+    <ul>
+      <li><b>1. Identificar as características que determinam um VMO</b>O que diferencia um Value Management Office de um PMO tradicional.</li>
+      <li><b>2. Distinguir e mensurar valor tangível, intangível e percebido</b>Traduzir cada tipo de valor em métricas e indicadores adequados.</li>
+      <li><b>3. Aplicar critérios de seleção e priorização baseados em valor</b>Usar a lógica do MoP (Management of Portfolios) para ordenar iniciativas por contribuição estratégica.</li>
+      <li><b>4. Evoluir o modelo operacional para sustentar a entrega de valor</b>Aplicar o Modelo 7S da McKinsey como lente de alinhamento entre estratégia, estrutura, sistemas e pessoas.</li>
+      <li><b>5. Utilizar o Business Case Greenline para justificar investimentos</b>Estruturar a linha que conecta iniciativa, benefício e resultado.</li>
+    </ul>
+
+    <p class="em-quote">"Projetos entregam produtos. O Agente de Valor entrega resultados."</p>
+
+    <a href="https://www.sympla.com.br/evento/pmi-rs-summit-2026-lote-blind-venda-as-cegas-14-11/3503520?share_id=copiarlink" target="_blank" rel="noopener" class="btn btn-v" style="margin-top:24px;width:100%;justify-content:center;">Inscreva-se</a>
+  </div>
+</div>
 
 <script>
 (function(){
@@ -1247,6 +1302,59 @@ burger.addEventListener('click', function(){
   burger.setAttribute('aria-expanded', String(o));
 });
 window.closeMob = function(){ mob.classList.remove('open'); burger.setAttribute('aria-expanded','false'); };
+
+// ementa do workshop (Gino Terentim)
+(function(){
+  var modal = document.getElementById('ementa-modal');
+  if(!modal) return;
+  window.openEmenta = function(){
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+  window.closeEmenta = function(){
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && modal.classList.contains('open')) window.closeEmenta();
+  });
+})();
+
+// foto do Gino: sorteia uma das fotos disponíveis a cada carregamento da página
+(function(){
+  var photos = document.querySelectorAll('.gino-photo');
+  if(!photos.length) return;
+  var options = ['assets/gino-terentim.webp', 'assets/gino-terentim-2.jpg', 'assets/gino-terentim-3.jpg'];
+  var pick = options[Math.floor(Math.random() * options.length)];
+  photos.forEach(function(img){ img.src = pick; });
+})();
+
+// bio do Gino: alterna entre duas versões da biografia a cada carregamento da página
+(function(){
+  var els = document.querySelectorAll('[data-gino]');
+  if(!els.length) return;
+  var bios = [
+    {
+      ro: 'Doutor em Administração · Université de Bordeaux &nbsp;|&nbsp; Harvard University Extension School &nbsp;|&nbsp; Fundador, Gino Terentim Academia',
+      p1: 'Dedica-se a reinventar a forma como aprendemos. Fundador da Gino Terentim Academia de Desenvolvimento Empresarial e idealizador do MBA em Gestão Estratégica de Valor, é doutor em Administração pela Université de Bordeaux, com MBA em Gerenciamento de Projetos pela ESALQ/USP e MBE em Economia Brasileira pela FEA/USP. Atualmente conclui o bacharelado em Extension Studies (Management) na Harvard University, onde também inicia o mestrado.',
+      p2: 'Especialista em planejamento estratégico, gestão de mudanças, portfólios, programas e projetos, acumula mais de 60 certificações profissionais, entre elas PMP, PgMP, PfMP e CCMP. É empreendedor social, autor de três livros e coautor do PMBOK 7ª edição.',
+      p3: 'Sua missão é transformar a educação em uma experiência extraordinária e acessível a todos.'
+    },
+    {
+      ro: 'Doutor · Université de Bordeaux &nbsp;|&nbsp; Trainer Dale Carnegie &nbsp;|&nbsp; Palestrante TEDx',
+      p1: 'MBA em Gerenciamento de Projetos pela ESALQ/USP e MBE pela FEA/USP. Referência nacional em transformação organizacional, liderança e desenvolvimento humano. Combina rigor intelectual com autenticidade para criar workshops que desenvolvem pessoas e impulsionam equipes de alta performance.',
+      p2: 'Certificações em Portfólios, Programas, Projetos, Change Management, Lean e Agile.',
+      p3: ''
+    }
+  ];
+  var bio = bios[Math.floor(Math.random() * bios.length)];
+  ['ro', 'p1', 'p2', 'p3'].forEach(function(key){
+    document.querySelectorAll('[data-gino="' + key + '"]').forEach(function(el){
+      if(bio[key]){ el.innerHTML = bio[key]; el.style.display = ''; }
+      else { el.style.display = 'none'; }
+    });
+  });
+})();
 
 // embaralha os cards de palestrantes a cada carregamento ("Em breve" fica por último)
 (function(){
